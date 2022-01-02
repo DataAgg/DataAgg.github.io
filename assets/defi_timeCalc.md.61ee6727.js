@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,o as s,g as c}from"./app.143f2636.js";const u='{"title":"","description":"","frontmatter":{"sidebar":false},"relativePath":"defi/timeCalc.md","lastUpdated":1641107182589}',r={};function n(_,i,p,d,l,f){const e=c;return s(),a("div",null,[o(e)])}var $=t(r,[["render",n]]);export{u as __pageData,$ as default};

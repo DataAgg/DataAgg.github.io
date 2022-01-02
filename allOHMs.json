@@ -1,0 +1,28 @@
+{
+  "OHM": {
+    "symbol": "OHM",
+    "name": "OlympusDAO",
+    "rebaseSpeed": 3,
+    "decimals": 4,
+    "price1": 852.65,
+    "price2": 298,
+    "apy": 7350.5,
+    "rebase": 0.3646,
+    "pledgeCoin": 0.9928,
+    "pledgeDay": 90
+  },
+  "TIME": {
+    "symbol": "MEMO",
+    "name": "Wonderland",
+    "symbolWarp": "wMEMO",
+    "rebaseSpeed": 3,
+    "decimals": 4,
+    "priceToken": 3280.66,
+    "priceOTtoken": 1436,
+    "priceYTtoken": 1325,
+    "apyToken": 651.963,
+    "rebase": 0.5926,
+    "pledgeCoin": 1,
+    "expiryDay": 90
+  }
+}
