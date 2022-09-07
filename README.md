@@ -1,2 +1,0 @@
-# DataAgg.github.io
-DataAgg
