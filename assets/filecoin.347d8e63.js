@@ -1,4 +1,4 @@
-import{d as a,u as m,c as n,w as l,a as r,r as C,o as d,b as e}from"./index.40c6f5c5.js";const F=e("div",{class:"md-body max-w-none"},[e("pre",null,[e("code",{class:"language-mermaid"},`flowchart TB
+import{d as a,f as m,o as n,g as l,w as r,h as C,r as d,a as e}from"./index.6ef0fcc8.js";const F=e("div",{class:"md-body max-w-none"},[e("pre",null,[e("code",{class:"language-mermaid"},`flowchart TB
     Packing[\\Packing/] --> PreCommit1    
     PreCommit1 --> PreCommit2    
     PreCommit1 <--> SealPreCommit1Failed
@@ -31,4 +31,4 @@ import{d as a,u as m,c as n,w as l,a as r,r as C,o as d,b as e}from"./index.40c6
     style FinalizeFailed fill:#FFC009;
     
 
-`)])],-1),c={locale:"zh-CN",layout:"default",meta:[]},g="",p=a({__name:"filecoin",setup(s,{expose:i}){m({meta:[]}),i({frontmatter:{locale:"zh-CN",layout:"default",meta:[]},excerpt:void 0});const t=r();return t.currentRoute.value.meta={...t.currentRoute.value.meta,layout:"default",locale:"zh-CN"},(u,f)=>{const o=C("page-content");return d(),n(o,{frontmatter:c},{default:l(()=>[F]),_:1})}}});export{p as default,g as excerpt,c as frontmatter};
+`)])],-1),c={locale:"zh-CN",layout:"default",meta:[]},g="",p=a({__name:"filecoin",setup(s,{expose:i}){m({meta:[]}),i({frontmatter:{locale:"zh-CN",layout:"default",meta:[]},excerpt:void 0});const t=C();return t.currentRoute.value.meta={...t.currentRoute.value.meta,layout:"default",locale:"zh-CN"},(u,f)=>{const o=d("page-content");return n(),l(o,{frontmatter:c},{default:r(()=>[F]),_:1})}}});export{p as default,g as excerpt,c as frontmatter};
