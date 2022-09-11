@@ -1,0 +1,1 @@
+import{_ as o,o as c,c as n,b as s}from"./index.4b3ed1b9.js";const e={},t={},a={class:"max-w-6xl mx-auto px-4 sm:px-6"},_=s("div",{class:"py-12 md:py-20"},[s("div",{class:"about"},[s("h1",null,"This is an admin page")])],-1),i=[_];function d(l,r){return c(),n("section",a,i)}typeof e=="function"&&e(t);const p=o(t,[["render",d]]);export{p as default};
