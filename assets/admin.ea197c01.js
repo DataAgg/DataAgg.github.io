@@ -1,0 +1,1 @@
+import{_ as n,r as t,o,c,a as s,b as l,d as _,F as u,e as m}from"./index.612da5c3.js";const d={};function f(e,i){const r=m,a=t("router-view");return o(),c(u,null,[s(r),l("main",null,[(o(),_(a,{key:e.$route.fullPath,route:e.$route},null,8,["route"]))])],64)}const k=n(d,[["render",f]]);export{k as default};
