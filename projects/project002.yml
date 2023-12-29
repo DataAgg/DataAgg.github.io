@@ -1,0 +1,329 @@
+title: 缅甸贵金属国际交易中心
+unit: '元'
+vault: 80
+symbol1: '元'
+symbol2: '万元'
+manTypes:
+  teamLeader: 800
+  designer: 450
+  webDeveloper: 600
+  serverDeveloper: 550
+  contractDeveloper: 700
+  tester: 350
+  maintenanceEngineer: 300
+  writer: 200
+  trainer: 300
+  marketer: 400
+sectionsBudgets: [50000, 250000, 250000, 150000, 50000, 50000]
+sections:
+  - title: 交易中心平台详细设计
+    category: "项目1期"
+    start: "2022-12-01T00:00:00.000Z"
+    end: "2023-01-15T00:00:00.000Z"
+    description: 交易中心平台的需求分析、详细功能设计及可供内部人员演示使用的原型版本开发工作
+    tasks:
+      - id: t101
+        task: 需求分析讨论, 2022-12-01, 3d
+        costs:
+          teamLeader: [1, 3]
+          marketer: [1, 3]
+        status: finished
+        category: 需求分析
+        description: 组织核心团队进行头脑风暴，收集整理核心业务需求
+      - id: t102
+        task: 功能详细设计, after t101, 15d
+        costs:
+          teamLeader: [2, 5]
+          designer: [1, 3]
+          webDeveloper: [3, 5]
+          serverDeveloper: [2, 5]
+        status: finished
+        category: 详细设计
+        description: 根据需求分析结果,设计平台功能模块, 业务流程及业务对象关系
+      - id: t103
+        task: 制定开发计划, after t102, 3d
+        costs:
+          teamLeader: [1, 3]
+          webDeveloper: [3, 3]
+          serverDeveloper: [2, 3]
+        status: finished
+        category: 详细设计
+        description: 针对需求设计及现有资源，与项目组成员沟通协调，详细设计安排开发计划
+      - id: t104
+        task: 内部演示环境搭建, 2023-01-05, 10d
+        costs:
+          teamLeader: [1, 5]
+          marketer: [1, 2]
+          maintenanceEngineer: [1, 3]
+        status: finished
+        category: 平台部署
+        description: 购买云服务器，部署开发测试环境，申请认证测试环境所必须的企业认证
+  - title: 交易中心平台1期开发
+    category: "项目1期"
+    start: "2023-01-01T00:00:00.000Z"
+    end: "2023-02-31T00:00:00.000Z"
+    description: 平台主功能开发、前端站点开发、后台管理界面开发
+    tasks:
+      - id: t201
+        task: 详细设计说明, 2023-01-01, 5d
+        costs:
+          teamLeader: [3, 5]
+          webDeveloper: [3, 5]
+          serverDeveloper: [2, 5]
+          tester: [3, 5]
+        status: finished
+        category: 详细设计
+        description: 对所有设计、开发、测试人员讲解功能模块详细设计
+      - id: t202
+        task: 平台界面设计, after t201, 5d
+        costs:
+          teamLeader: [1, 3]
+          designer: [1, 5]
+        category: 详细设计
+        description: UI设计师按照详细功能文档设计前端界面进行美化设计，准备相关UI素材
+      - id: t203
+        task: 平台java端框架升级, after t201, 10d
+        costs:
+          teamLeader: [1, 5]
+          serverDeveloper: [2, 10]
+        status: finished
+        category: 升级改造
+        description: 对现有平台的java端进行升级改造,实现基础版本升级
+      - id: t204
+        task: 平台管理端框架升级, after t203, 5d
+        costs:
+          teamLeader: [1, 5]
+          designer: [1, 3]
+          webDeveloper: [3, 5]
+        status: finished
+        category: 升级改造
+        description: 平台管理端框架及类库升级,完善构建工具
+      - id: t205
+        task: 前端界面美化, after t204, 5d
+        costs:
+          teamLeader: [1, 1]
+          designer: [1, 5]
+          webDeveloper: [3, 5]
+        category: 平台开发
+        description: 按照设计师提供的平台界面设计稿，进行网站前端界面升级
+      - id: t206
+        task: 业务流程更新, 2023-01-26, 15d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 3]
+          serverDeveloper: [2, 15]
+        category: 平台开发
+        description: 按照功能详细设计更新业务流程相关代码实现
+      - id: t207
+        task: 业务文档更新, after t206, 5d
+        costs:
+          teamLeader: [1, 5]
+          marketer: [1, 3]
+          webDeveloper: [3, 5]
+          writer: [2, 5]
+        category: 平台开发
+        description: 按照功能详细设计更新所有相关文档及模板
+      - id: t208
+        task: 产品库管理, after t204, 5d
+        costs:
+          teamLeader: [2, 1]
+          webDeveloper: [3, 5]
+          serverDeveloper: [2, 5]
+        category: 平台开发
+        description: 重构现有产品库管理功能实现
+      - id: t209
+        task: bug修复与功能完善1, after t204, 20d
+        costs:
+          teamLeader: [2, 10]
+          webDeveloper: [3, 15]
+          serverDeveloper: [2, 15]
+        category: 平台开发
+        description: bug修复及功能细节完善
+      - id: t210
+        task: 前后端集成开发, 2023-02-21, 3d
+        costs:
+          teamLeader: [2, 3]
+          designer: [1, 5]
+          webDeveloper: [3, 3]
+          serverDeveloper: [2, 3]
+        category: 平台开发
+        description: 平台前后端集成开发,联调相关业务功能模块
+      - id: t211
+        task: 功能测试及验收1, after t206, 10d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 5]
+          designer: [1, 5]
+          tester: [3, 10]
+        category: 功能测试
+        description: 测试功能模块，跟进bug修复
+  - title: 交易中心平台实施培训
+    category: "项目1期"
+    start: "2023-02-26T00:00:00.000Z"
+    end: "2023-03-15T00:00:00.000Z"
+    description: 交易中心平台实体公司落地相关的项目实施工作及相关业务人员的技能培训与技术支持，并根据实际市场需求及客户功能反馈完善现有平台功能细节
+    tasks:
+      - id: t301
+        task: 制定实施计划, 2023-02-26, 3d
+        costs:
+          teamLeader: [2, 3]
+          marketer: [1, 3]
+          trainer: [2, 3]
+        category: 平台实施
+        description: 结合业务部门推广情况,制定详细的平台上线发布实施计划
+      - id: t302
+        task: 内部培训, after t301, 7d
+        costs:
+          teamLeader: [1, 5]
+          marketer: [1, 7]
+          trainer: [2, 7]
+          writer: [2, 7]
+          tester: [3, 7]
+        category: 平台实施
+        description: 根据需求分析结果,设计平台v1版本的功能模块, 业务流程及业务对象关系
+      - id: t304
+        task: 核心企业基础数据准备, after t302, 3d
+        costs:
+          teamLeader: [1, 3]
+          marketer: [1, 3]
+          tester: [3, 3]
+          maintenanceEngineer: [1, 3]
+        category: 平台实施
+        description: 收集整理核心企业资料,整合分析相关资源,准备基础业务数据
+      - id: t305
+        task: 集成测试, after t301, 10d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 5]
+          tester: [1, 10]
+        category: 平台开发
+        description: 对平台进行完整的功能测试及压力测试
+      - id: t306
+        task: bug修复与功能完善2, after t301, 10d
+        costs:
+          teamLeader: [2, 5]
+          webDeveloper: [3, 10]
+          serverDeveloper: [2, 10]
+        category: 平台开发
+        description: 针对内部测试及实际业务实施,改进完善平台功能细节
+      - id: t307
+        task: 平台正式上线, 2023-03-10, 1d
+        costs:
+          teamLeader: [2, 1]
+          marketer: [1, 1]
+          webDeveloper: [3, 1]
+          serverDeveloper: [2, 1]
+          tester: [1, 1]
+          maintenanceEngineer: [1, 1]
+        category: 平台上线
+        description: 平台正式上线发布运行
+      - id: t308
+        task: bug修复与功能完善3, after t307, 10d
+        costs:
+          teamLeader: [1, 5]
+          webDeveloper: [3, 10]
+          serverDeveloper: [2, 10]
+        category: 平台运维
+        description: 完善平台功能细节,修复bug
+      - id: t309
+        task: 区域代理业务人员培训与代运营, after t307, 15d
+        costs:
+          teamLeader: [1, 5]
+          marketer: [1, 15]
+          trainer: [2, 15]
+          writer: [2, 15]
+        category: 平台运维
+        description: 对区域代理业务人员进行针对性培训与代运营服务
+  - title: 交易中心平台2期开发
+    category: "项目2期"
+    start: "2023-03-16T00:00:00.000Z"
+    end: "2023-04-15T00:00:00.000Z"
+    description: 平台2期功能内容开发
+    tasks:
+      - id: t401
+        task: 2期需求分析讨论, 2023-03-16, 3d
+        costs:
+          teamLeader: [2, 3]
+          marketer: [1, 3]
+        category: 详细设计
+        description: 组织核心团队进行头脑风暴，收集整理平台2期业务需求
+      - id: t402
+        task: 数字货币支付结算集成接入, after t401, 10d
+        costs:
+          teamLeader: [2, 10]
+          designer: [1, 3]
+          webDeveloper: [3, 3]
+          serverDeveloper: [2, 10]
+          contractDeveloper: [2, 10]
+          maintenanceEngineer: [1, 5]
+        category: 功能开发
+        description: 平台管理端框架及类库升级,完善构建工具
+      - id: t403
+        task: 更新业务流程, after t401, 10d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 3]
+          webDeveloper: [3, 5]
+          serverDeveloper: [2, 10]
+        category: 功能开发
+        description: 根据实际业务情况调整更新业务流程
+      - id: t404
+        task: 功能测试与验收2, after t402, 5d
+        costs:
+          teamLeader: [1, 5]
+          designer: [1, 3]
+          marketer: [1, 3]
+          tester: [1, 5]
+        category: 功能测试
+        description: 测试功能模块，跟进bug修复
+      - id: t405
+        task: bug修复与功能完善4, after t402, 5d
+        costs:
+          teamLeader: [1, 5]
+          webDeveloper: [3, 5]
+          serverDeveloper: [2, 10]
+          contractDeveloper: [2, 10]
+          maintenanceEngineer: [1, 5]
+        category: 功能开发
+        description: 平台前后端集成开发,联调相关业务功能模块，完善平台功能细节,修复bug
+      - id: t406
+        task: 更新部署, after t405, 3d
+        costs:
+          teamLeader: [2, 3]
+          tester: [1, 3]
+          maintenanceEngineer: [1, 3]
+        category: 平台实施
+        description: 完成平台的升级部署
+feeCategories:
+  外部采购:
+    - title: 注册认证
+      specification: 域名、SSL证书及其他平台认证
+      quantity: 3
+      price: 1000
+      description: 3年
+    - title: 云服务器租赁
+      specification: 云服务器租赁, 1台主服务器+1台从服务器+1台备份/部署服务器
+      quantity: 1
+      price: 27000
+      description: 1年
+    - title: 第三方服务租用
+      specification: 相关第三方服务(CDN、邮件服务、短信网关、机器人识别等)的租用
+      quantity: 1
+      price: 20000
+      description: 1年
+  平台服务:
+    - title: 平台运维
+      specification: 定期对平台进行常规运维工作，保证平台正常运作
+      quantity: 2
+      price: 5000
+      description: 2人1年
+    - title: 技术支持
+      specification: 平台技术支持, 24小时*7天
+      quantity: 4
+      price: 5000
+      description: 4人1年
+    - title: 平台运营推广
+      specification: 平台新闻资讯编辑发布, 2-5次/周
+      quantity: 2
+      price: 10000
+      description: 2人1年

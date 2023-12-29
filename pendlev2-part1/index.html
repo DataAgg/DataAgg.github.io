@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="en" dir="ltr" class="2xl:text-[20px]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="sitemap" href="/sitemap-index.xml"><link rel="shortcut icon" href="/_astro/favicon.sNBBSGPZ.ico"><link rel="icon" type="image/svg+xml" href="/_astro/favicon.jAUM_1GV.svg"><link rel="mask-icon" href="/_astro/favicon.jAUM_1GV.svg" color="#8D46E7"><link rel="apple-touch-icon" sizes="180x180" href="/_astro/apple-touch-icon.qzCMJsat.png"><style is:global>
+  :root {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+    --aw-color-primary: #6966ff;
+    --aw-color-secondary: #3ed9a4;
+    --aw-color-accent: #e45555;
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: #181818;
+    --aw-color-text-muted: rgb(0x18 0x18 0x18 / 66%);
+    --aw-color-bg-page: #ffffff;
+    --aw-color-bg-page-dark: #ffffff;
+    --aw-color-layer1: #ffffff;
+    --aw-color-layer2: #e9ecee;
+    --aw-color-layer3: #ffffff;
+    --aw-color-layer4: #f7f8fa;
+    --aw-color-layer5: #ffffff;
+    --aw-color-layer6: #edf0f2;
+    --aw-color-layer7: #d5dadf;
+    --aw-color-layer8: #ffffff;
+
+    ::selection {
+      background-color: lavender;
+    }
+  }
+
+  .dark {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+    --aw-color-primary: #6966ff;
+    --aw-color-secondary: #3ed9a4;
+    --aw-color-accent: #e45555;
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: #fafafa;
+    --aw-color-text-muted: rgb(0xfa 0xfa 0xfa / 66%);
+    --aw-color-bg-page: #000000;
+    --aw-color-bg-page-dark: #000000;
+    --aw-color-layer1: #000000;
+    --aw-color-layer2: #18181b;
+    --aw-color-layer3: #0c0c0d;
+    --aw-color-layer4: #212124;
+    --aw-color-layer5: #303033;
+    --aw-color-layer6: #3b3b3f;
+    --aw-color-layer7: #494950;
+    --aw-color-layer8: #56565c;
+
+    ::selection {
+      background-color: #181825;
+      color: snow;
+    }
+  }
+</style><script>(function(){const defaultTheme = "dark";
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');
+
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.checked = theme !== 'dark';
+      });
+    }
+  }
+
+  if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+    applyTheme(defaultTheme.replace(':only', ''));
+  } else if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+})();</script><title>Pendle V2 - part1 — TokenAgg DAO</title>
+<meta name="description" content="Pendle V2 (Part 1/3) — 基金会" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://dataagg.github.io/pendlev2-part1" />
+<meta property="og:title" content="Pendle V2 - part1" />
+<meta property="og:description" content="Pendle V2 (Part 1/3) — 基金会" />
+<meta property="og:url" content="https://dataagg.github.io/pendlev2-part1" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://dataagg.github.io/imgs/blogs/pendlev2_01cr.png" />
+
+<meta property="og:locale" content="en" />
+<meta property="og:site_name" content="TokenAgg DAO" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@watano" />
+<meta name="twitter:creator" content="@watano" /><!-- Uncomment line below to activate View Transitions --><!-- <ViewTransitions fallback="swap" /> --><link rel="stylesheet" href="/_astro/click-through.45fq7QCF.css" /></head> <body class="antialiased text-default bg-page tracking-tight">   <header class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-aw-sticky-header id="header"> <div class="absolute inset-0"></div> <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl"> <div class="flex justify-between"> <a class="flex items-center" href="/"> <img src="/_astro/logo-long-dark.TphFalWY_Z1Yevjd.svg" id="toplogo" alt="TokenAgg DAO" width="199" height="64" loading="lazy" decoding="async"><script>(function(){const defaultTheme = "dark";
+
+  if (document.documentElement.classList.contains('dark')) {
+    document.getElementById('toplogo').src = '/imgs/logo-long-dark.svg';
+  } else {
+    document.getElementById('toplogo').src = '/imgs/logo-long-light.svg';
+  }
+})();</script> </a> <div class="flex items-center md:hidden"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> </div> <nav class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 项目  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">  <symbol id="ai:tabler:chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></symbol> <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/project/index.html?id=001"> TokenAgg DAO </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/project/index.html?id=012"> DApp Admin </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 解决方案  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution1"> 生鲜配送 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution2"> 诊所联盟 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution3"> 妙蛙云池 </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 公司  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/teams"> 关于我们 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/intro"> 公司价值 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/story"> 成功案例 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/privacy"> 隐私条款 </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 博客  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/项目推荐"> 项目推荐 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/基础知识"> 基础知识 </a> </li> </ul>  </li> </ul> </nav> <div class="hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0"> <div class="items-center flex justify-between w-full md:w-auto"> <div class="flex"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 md:inline-block" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol> <use  xlink:href="#ai:tabler:sun"></use> </svg></button> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS Feed" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">  <symbol id="ai:tabler:rss"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></symbol> <use  xlink:href="#ai:tabler:rss"></use> </svg> </a> </div> <span class="ml-4 rtl:ml-0 rtl:mr-4"> <a class="btn-secondary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" target="_blank" rel="noopener noreferrer" href="https://github.com/dataagg">Github</a> </span> </div> </div> </div> </header>  <main>  <section class="py-8 sm:py-16 lg:py-20 mx-auto"> <article> <header class=""> <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"> <p> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">  <symbol id="ai:tabler:clock"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 7v5l3 3"/></g></symbol> <use  xlink:href="#ai:tabler:clock"></use> </svg> <time datetime="Fri Dec 02 2022 08:01:00 GMT+0800 (香港标准时间)" class="inline-block">Dec 2, 2022</time>  
+· <a class="capitalize hover:underline inline-block" href="/category/项目推荐"> 项目推荐 </a>   · 18 min read </p> </div> <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> Pendle V2 - part1 </h1> <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"> Pendle V2 (Part 1/3) — 基金会 </p> <img src="/imgs/blogs/pendlev2_01cr.png" width="900" height="506" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 506px; aspect-ratio: 1.7786561264822134; width: 100%;" class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700" alt="Pendle V2 (Part 1/3) — 基金会" loading="eager" decoding="async"> </header> <div class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"> <h1 id="pendle-v2-part-13--基金会">Pendle V2 (Part 1/3) — 基金会</h1>
+<p><img src="/imgs/blogs/pendlev2_01.png" alt=""></p>
+<p>Introducing the 1st key component of Pendle V2，a brand new AMM。This post will serve to walk through the various features while the whitepaper is available <a href="https://github.com/pendle-finance/pendle-v2-resources/blob/main/whitepapers/V2_AMM.pdf">here</a> for a technical dive into the mechanics。</p>
+<p>介绍 Pendle V2 的第一个关键组件，一个全新的 AMM。这篇文章将用于介绍各种功能，而白皮书可<a href="https://github.com/pendle-finance/pendle-v2-resources/blob/main/whitepapers/V2_AMM.pdf">在此处</a>获得，以便对机制进行技术深入研究。</p>
+<p>Pendle V1 settled over notional $350,000,000 worth of yield trades within a year of launch，and we got a chance to experiment with a wide range of assets，from stablecoins to tokens with 80,000% APR。Being able to experience this first-hand provided us with insights that we would never have considered before。</p>
+<p>Pendle V1 在推出后的一年内结算了价值超过 350,000,000 美元的名义收益交易，我们有机会尝试各种资产，从稳定币到年利率为 80,000%的代币。能够亲身体验这一点为我们提供了以前从未考虑过的见解。</p>
+<p>We’ve consolidated all this into V2 and rebuilt the AMM。We are truly excited to bring it to life as a foundational building block for yield markets。We’d also like to credit the <a href="https://notional.finance/">Notional Finance</a> team for their novel AMM which enables fixed rates trading，one that we’ve adopted as the baseline model。We’ve conducted a study in the whitepaper which illustrates how significantly it improves on the current popular AMM models。</p>
+<p>我们已将所有这些整合到 V2 中，并重建了 AMM。我们真的很高兴能将其作为收益市场的基础组成部分。我们还想感谢 <a href="https://notional.finance/">Notional Finance</a> 团队的新颖 AMM，该 AMM 支持固定利率交易，我们已将其作为基准模型。我们在白皮书中进行了一项研究，说明了它与当前流行的 AMM 模型相比的显着改进。</p>
+<p><img src="/imgs/blogs/pendlev2_02.png" alt=""></p>
+<p>The V2 AMM introduces multiple features focusing on friendly liquidity provision，capital efficiency and flexibility。Here are some key points：</p>
+<p>V2 AMM 引入了多种功能，专注于友好的流动性提供，资本效率和灵活性。以下是一些关键点：</p>
+<ul>
+<li>LP 的最小无常损失 (IL)；Minimal impermanent loss (IL) for LPs</li>
+<li>资本效率比 V1 提高 200 倍；Up to 200x improvement on capital efficiency from V1</li>
+<li>低滑点交易；Low-slippage trades</li>
+<li>LP 从 2 种资产的交易中赚取费用，同时仅提供 1 种资产的流动性；LPs earn fees from the trading of 2 assets while only providing liquidity for 1</li>
+<li>AMM 可以优化任何特定的收益率范围，以优化流动性；AMM can be optimized any specific yield ranges to optimize liquidity</li>
+</ul>
+<p>A quick primer to PT and YT 👇</p>
+<p>PT 和 YT 的快速入门 👇</p>
+<p><img src="/imgs/blogs/pendlev2_03.png" alt=""></p>
+<h1 id="资本效率-capital-efficiency">资本效率 Capital Efficiency</h1>
+<h1 id="1-个池2-个市场-1-pool2-markets">1 个池，2 个市场 1 Pool，2 Markets</h1>
+<p>Say goodbye to liquidity fragmentation，PTs and YTs can both be traded using a single pool of PT liquidity，enabled by utilizing flash swaps！</p>
+<p>告别流动性碎片化，PT 和 YT 都可以使用单一的 PT 流动性池进行交易，通过利用闪兑来实现！</p>
+<p>This has benefits on multiple fronts：</p>
+<p>这在多个方面都有好处：</p>
+<p>LPs have better returns with their liquidity working doubly hard。They earn fees coming from 2 markets while only providing liquidity for 1 asset。</p>
+<p>LP 的流动性加倍，回报率更高。他们赚取来自 2 个市场的手续费，同时只为 1 种资产提供流动性。</p>
+<p>Traders benefit from deeper liquidity and a much improved UX as PT and YT swaps can all be executed on Pendle。V1 suffered from fragmentation as it required 2 separate pools for trading PT and YT。</p>
+<p>交易者受益于更深层次的流动性和大幅改善的用户体验，因为 PT 和 YT 兑换都可以在 Pendle 上执行。V1 遭受了碎片化，因为它需要 2 个单独的池来交易 PT 和 YT。</p>
+<p>For Pendle as a protocol，PT trades now contribute to protocol revenue (which previously wasn’t the case)。PENDLE incentives will also be better utilized as they can be focused on a single pool to improve both PT and YT liquidity。</p>
+<p>对于 Pendle 作为协议，PT 交易现在为协议收入做出了贡献 (以前不是这样)。PENDLE 激励措施也将得到更好的利用，因为它们可以集中在一个池中，以提高 PT 和 YT 的流动性。</p>
+<p>*<em>请参阅附录以了解其工作原理。Refer to the appendix on how it works</em>。</p>
+<h1 id="专门用于收益交易-specialized-for-yield-trading">专门用于收益交易 Specialized for Yield Trading</h1>
+<p><img src="/imgs/blogs/pendlev2_04.png" alt=""></p>
+<p>Introducing 2 concepts to enhance liquidity depth — Concentrated Liquidity and a Dynamic Curve</p>
+<p>引入两个概念来增强流动性深度——集中流动性和动态曲线</p>
+<h1 id="集中流动性-concentrated-liquidity">集中流动性 Concentrated Liquidity</h1>
+<p>Yields are often cyclical in nature and typically swing between highs and lows (much like a pendulum！)。Typically，the floor and ceiling for the yield of a liquid asset are much easier to predict than its price。</p>
+<p>收益率本质上通常是周期性的，通常在高点和低点之间摆动 (很像钟摆！)。通常，流动资产收益率的下限和上限比其价格更容易预测。</p>
+<p>For example，the annual yield of staked ETH is likely to fluctuate in a band of 0.5–12%. Knowing the rough yield range of an asset enables us to concentrate liquidity within that range。</p>
+<p>例如，质押 ETH 的年收益率可能会在 0.5-12% 的范围内波动。了解资产的粗略收益率范围使我们能够将流动性集中在该范围内。</p>
+<p>Given the previous example，the V2 AMM can be optimized for such a range on staked ETH。The result is something conceptually similar to UniV3’s concentrated liquidity whereby liquidity is utilized much more effectively，while still retaining fungible LP tokens。</p>
+<p>鉴于前面的示例，V2 AMM 可以针对质押 ETH 的此类范围进行优化。这个结果在概念上类似于 UniV3 的集中流动性，流动性得到更有效的利用，同时仍保留可替代的 LP 代币。</p>
+<p>According to our simulation in this yield range，Pendle V2 improves capital efficiency by over <strong>70x</strong>，making the liquidity of that pool equivalent to 70x deeper than a V1 pool of the same size。</p>
+<p>根据我们在此收益率范围内的模拟，Pendle V2 将资本效率提高了 70 倍以上，使该池的流动性相当于相同规模的 V1 池的 <strong>70</strong> 倍。</p>
+<h1 id="动态曲线-dynamic-curve">动态曲线 Dynamic Curve</h1>
+<p>The AMM model’s curve is specifically designed for yield trading。As time passes，PT and YT prices naturally shift as they approach maturity。The AMM curve automatically shifts to account for these changes，such that one will only trade the interest rate changes and not the prices of the individual assets。</p>
+<p>AMM 模型的曲线专为收益交易而设计。随着时间的流逝，PT 和 YT 价格在接近到期时自然会发生变化。AMM 曲线会自动移动以考虑这些变化，因此人们将只交易利率变化，而不是单个资产的价格。</p>
+<p>The curve shifts also adjust the model to be more capital efficient as we approach maturity by taking into account the fact that PT trades closer to the underlying asset price (for example，it becomes infinitely capital efficient at the maturity where PT trades 1-to-1 against the underlying asset)。</p>
+<p>曲线偏移还通过考虑 PT 交易更接近标的资产价格的事实，调整模型以提高资本效率，因为我们接近到期日 (例如，在 PT 对标的资产进行 1 比 1 交易的到期日，它变得无限资本高效)。</p>
+<h1 id="最小无常损失-minimal-il">最小无常损失 Minimal IL</h1>
+<p><img src="/imgs/blogs/pendlev2_05.png" alt=""></p>
+<p>To further enhance the improvements to liquidity providers，the V2 AMM is set up such that IL is not a concern。IL is negligible as LPs provide PT and its corresponding yield-bearing asset，which are closely correlated。On top of that，the maximum IL is deterministic for liquidity provision to maturity。</p>
+<p>为了进一步加强对流动性提供者的改进，V2 AMM 的设置使得 IL 不是一个问题。IL 可以忽略不计，因为 LP 提供 PT 及其相应的收益率资产，两者密切相关。最重要的是，最大 IL 对于流动性供应至到期具有确定性。</p>
+<p>As a bonus for liquidity providers：the assets provided also generate yield。As such，Pendle V2 LPs will be earning yields from：</p>
+<p>作为流动性提供者的奖励：所提供的资产也会产生收益。因此，Pendle V2 LP 将从以下方面获得收益：</p>
+<ol>
+<li>PT 提供的固定收益；Fixed yield from the PT provided</li>
+<li>收益资产提供的收益 ¹；Yields from yield-bearing assets provided¹</li>
+<li>Swap 手续费 (来自 PT 和 YT 交易)；Swap fees (from both PT and YT trades)</li>
+<li>PENDLE 激励措施；PENDLE incentives</li>
+</ol>
+<p>With minimal IL alongside these yield sources，there is little downside in providing liquidity in Pendle V2 if the yield-bearing assets are being held as part of a longer-term strategy。</p>
+<p>由于这些收益来源的 IL 极小，如果将收益资产作为长期策略的一部分持有，那么在 Pendle V2 中提供流动性几乎没有负面影响。</p>
+<h1 id="更多功能-more-features">更多功能 More Features</h1>
+<p>Auto-routing is built into V2，allowing anyone to trade or provide liquidity for PTs and YTs with any major asset。This is key to enable the smooth UX everyone is used to and allow Pendle users to take advantage of the deep liquidity that already exists on major DEXes。</p>
+<p>V2 内置了自动路由功能，允许任何人使用任何主要资产交易或为 PT 和 YT 提供流动性。这是实现每个人都习惯的流畅用户体验的关键，并允许 Pendle 用户利用主要 DEX 上已经存在的深度流动性。</p>
+<p>V2 also introduces a dynamic fee rate to improve the trading experience where fees are based on interest rates instead of the absolute amount。This means that the absolute fees per dollar trade will decrease over time，as the same change in interest is equivalent to a smaller change in absolute price。E.g. There will be less swap fee from trading the same yield on a 1-month maturity vs a 1-year maturity。</p>
+<p>V2 还引入了动态费率，以改善交易体验，其中费用基于利率而不是绝对金额。这意味着每美元交易的绝对费用将随着时间的推移而减少，因为相同的利息变化相当于绝对价格的较小变化。例如，与1年到期相比，在 1 个月期限交易相同收益率的交易费会更少。</p>
+<p>Significant efforts have also been made to gas optimization to ensure transactions on V2 will be as cost-efficient as possible。</p>
+<p>在 gas 优化方面也做出了重大努力，以确保 V2 上的交易将尽可能具有成本效益。</p>
+<p>To further unlock the composability of fixed-rate products on Pendle，we’ve adapted a TWAP oracle for interest rates on Pendle’s V2 AMM。The TWAP oracle is adapted from UniswapV3，which allows for querying the TWAP of any duration for up to 9 days with no extra infrastructure needed。We’re beyond excited to see what can be built on top of Pendle，e.g. fixed rate lending/borrowing with PT，leveraged fixed rate，etc.</p>
+<p>为了进一步解锁 Pendle 上固定利率产品的可组合性，我们针对 Pendle 的 V2 AMM 的利率调整了 TWAP 预言机。TWAP 预言机改编自 UniswapV3，它允许查询任何持续时间的 TWAP 长达9天，无需额外的基础设施。我们非常兴奋地看到可以在 Pendle 之上构建什么，例如固定利率 PT 贷款/借款，杠杆固定利率等。</p>
+<h1 id="下一步是什么-whats-next">下一步是什么 What’s Next</h1>
+<p>This first post has shared the key features of the V2 AMM which will act as the foundational infrastructure for yield markets。Part 2 will elaborate on how we will enable open，permissionless access for everyone。</p>
+<p>第一篇文章分享了 V2 AMM 的主要功能，它将作为收益市场的基础基础设施。第 2 部分将详细说明我们将如何为每个人实现开放、无需许可的访问。</p>
+<p>Until then，stay up-to-date by following our <a href="https://twitter.com/pendle_fi">Twitter</a> and joining the <a href="http://discord.gg/uawbcnRMK9">community</a>。</p>
+<p>在此之前，请关注我们的 <a href="https://twitter.com/pendle_fi">Twitter</a> 并加入<a href="http://discord.gg/uawbcnRMK9">社区</a>，了解最新信息。</p>
+<h1 id="附录-appendix">附录 Appendix</h1>
+<h1 id="yt-与-pt-amm-的兑换-yt-swaps-with-pt-amm">YT 与 PT AMM 的兑换 YT Swaps with PT AMM</h1>
+<p>The V2 AMM is designed specifically for trading fixed rates with PT in focused ranges。</p>
+<p>V2 AMM 专为在集中范围内交易固定利率而设计。</p>
+<p>In V2，PT is always traded against its underlying asset。By doing so (e.g. PT-aUSDC / aUSDC pool)¹，IL is significantly mitigated by the high correlation between both assets。</p>
+<p>在 V2 中，PT 始终与其标的资产进行交易。通过这样做 (例如 PT-aUSDC/aUSDC 池) ¹，两种资产之间的高度相关性显著缓解了 IL。</p>
+<p>Swapping PT is a straightforward process of swapping between the 2 assets in the pool，while YT swaps utilize flash swaps in the PT pools。</p>
+<p>兑换 PT 是在池中的 2 个资产之间进行交换的简单过程，而兑换 YT 则利用 PT 池中的闪兑。</p>
+<p>As PT and YT can be minted from and redeemed to 1 unit of the underlying asset，we can express the following price relationship：</p>
+<p>由于 PT 和 YT 可以从标的资产的 1 个单位铸造和赎回，我们可以表示以下价格关系：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span>P(PT) + P(YT) = P(标的资产)</span></span></code></pre>
+<p><em>Note：P(Asset) represents the price of Asset</em></p>
+<p><em>注：P (资产) 代表资产价格</em></p>
+<p>Knowing that YT price has an inverted correlation against PT price，we made use of this price relationship to route YT transactions through PT pools，effectively making use of one pool for both YT and PT trades。</p>
+<p>知道 YT 价格与 PT 价格呈反比相关性，我们利用这种价格关系通过 PT 池路由 YT 交易，有效地利用一个池进行 YT 和 PT 交易。</p>
+<p>How does it work？Let’s run through the steps with aUSDC as an example。</p>
+<p>它是如何工作的？让我们以 aUSDC 为例完成这些步骤。</p>
+<p>购买 YT-aUSDC Buying YT-aUSDC：</p>
+<ol>
+<li>买方将 aUSDC 发送到兑换合约中 (从任何主要代币自动路由)；Buyer sends aUSDC into the swap contract (auto-routed from any major token)</li>
+<li>合约从池中借入更多 aUSDC；Contract borrows more aUSDC from the pool</li>
+<li>Mint 来自所有 aUSDC 的 PT-aUSDC 和 YT-aUSDC；Mint PT-aUSDC and YT-aUSDC from all of the aUSDC</li>
+<li>将 YT 发送给买家；Send the YTs to the buyer</li>
+<li>PT 以 aUSDC 出售，以偿还步骤 2 中的贷款；The PTs are sold for aUSDC to repay the loan from step 2</li>
+</ol>
+<p><img src="/imgs/blogs/pendlev2_06.png" alt=""></p>
+<p>卖出 YT-aUSDC；Selling YT-aUSDC：</p>
+<ol>
+<li>卖方发送 YT-aUSDC 到兑换合约；Seller sends YT-aUSDC to swap contract</li>
+<li>合约从池中借入等量的 PT-aUSDC；Contract borrows an equivalent amount of PT-aUSDC from the pool</li>
+<li>YT 和 PT 用于赎回 USDC；The YTs and PTs are used to redeem aUSDC</li>
+<li>aUSDC 的一部分被交换为 PT-aUSDC，以偿还步骤 2 中的贷款；A portion of the aUSDC is swapped to PT-aUSDC to repay the loan from step 2</li>
+<li>aUSDC 被发送给卖家 (或路由到任何主要代币，例如 ETH、USDC、wBTC 等)；aUSDC is sent to the seller (or routed to any major tokens，e.g. ETH，USDC，wBTC，etc)</li>
+</ol>
+<p><img src="/imgs/blogs/pendlev2_07.png" alt=""></p>
+<p>As shown above，YT trades are executed through PT/ybToken pool。As the pool accommodates both PT and YT swaps，LPs are expected to earn fees from both YT and PT swaps。Even though the pools consist of PTs and SYs，users can trade PT and YT with any major tokens supported，Pendle contracts will automatically route the tokens into the necessary assets。</p>
+<p>如上所示，YT 交易通过 PT/ybToken 池执行。由于池同时容纳 PT 和 YT 的兑换，因此 LP 预计将从 YT 和 PT 的兑换中赚取费用。即使池由 PTs 和 SYs 组成，用户也可以使用支持的任何主要代币交易 PT 和 YT，Pendle 合约会自动将代币路由到必要的资产中。</p>
+<p>¹ V2 AMM supports PT-ybToken / sy-ybToken where SY (standardized yield) is a standardized wrapped version of any ybTokens。Read more here。E.g. sy-aUSDC is simply wrapped aUSDC and is used to mint PT-aUSDC and YT-aUSDC。</p>
+<p>¹ V2 AMM 支持 PT-ybToken/sy-ybToken，其中 SY (标准化收益率) 是任何 ybTokens 的标准化包装版本。在此处阅读更多内容。例如，sy-aUSDC 被简单地包装为 aUSDC，用于铸造 PT-aUSDC 和 YT-aUSDC。</p> </div> <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row"> <ul class="mr-5 rtl:mr-0 rtl:ml-5"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/EVM" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">EVM</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/DeFi" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">DeFi</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/项目" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">项目</a></li></ul> <div class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600"> <span class="align-super font-bold text-gray-400 dark:text-slate-400">Share:</span> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Twitter Share" data-aw-social-share="twitter" data-aw-url="https://dataagg.github.io/pendlev2-part1" data-aw-text="Pendle V2 - part1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-x">   <use  xlink:href="#ai:tabler:brand-x"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Facebook Share" data-aw-social-share="facebook" data-aw-url="https://dataagg.github.io/pendlev2-part1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-facebook">  <symbol id="ai:tabler:brand-facebook"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z"/></symbol> <use  xlink:href="#ai:tabler:brand-facebook"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Linkedin Share" data-aw-social-share="linkedin" data-aw-url="https://dataagg.github.io/pendlev2-part1" data-aw-text="Pendle V2 - part1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-linkedin">  <symbol id="ai:tabler:brand-linkedin"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm4 5v5m0-8v.01M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></g></symbol> <use  xlink:href="#ai:tabler:brand-linkedin"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Whatsapp Share" data-aw-social-share="whatsapp" data-aw-url="https://dataagg.github.io/pendlev2-part1" data-aw-text="Pendle V2 - part1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-whatsapp">  <symbol id="ai:tabler:brand-whatsapp"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></g></symbol> <use  xlink:href="#ai:tabler:brand-whatsapp"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Email Share" data-aw-social-share="mail" data-aw-url="https://dataagg.github.io/pendlev2-part1" data-aw-text="Pendle V2 - part1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol> <use  xlink:href="#ai:tabler:mail"></use> </svg> </button> </div> </div> </article> </section> <div class="mx-auto px-6 sm:px-6 max-w-3xl pt-8 md:pt-4 pb-12 md:pb-20"> <a class="btn btn-tertiary px-3 md:px-3" href="/blog"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" data-icon="tabler:chevron-left">  <symbol id="ai:tabler:chevron-left"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"/></symbol> <use  xlink:href="#ai:tabler:chevron-left"></use> </svg> Back to Blog
+</a> </div>  </main>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12"> <div class="col-span-12 lg:col-span-4"> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/">TokenAgg DAO</a> </div> <div class="text-sm text-muted"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="/terms">通用条款</a><a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="/privacy">隐私协议</a> </div> </div> <div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">项目</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/project/index.html?id=001"> TokenAgg DAO </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/project/index.html?id=012"> DApp Admin </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">解决方案</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution1"> 生鲜配送 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution2"> 诊所联盟 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution3"> 妙蛙云池 </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">公司</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/teams"> 关于我们 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/intro"> 公司价值 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/story"> 成功案例 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/privacy"> 隐私条款 </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">博客</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/category/项目推荐"> 项目推荐 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/category/基础知识"> 基础知识 </a> </li> </ul> </div> </div> <div class="md:flex md:items-center md:justify-between py-6 md:py-8"> <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="X" href="https://twitter.com/watano"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol> <use  xlink:href="#ai:tabler:brand-x"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">   <use  xlink:href="#ai:tabler:rss"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Github" href="https://github.com/dataagg"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol> <use  xlink:href="#ai:tabler:brand-github"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Mirror" href="https://mirror.xyz/0x94c0e8cf59e644fa76d4fa83164b9f2030d07f31">  <img src="/imgs/icon-mirror.png" class="w-5 h-5" alt="">  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://github.com/dataagg"> DataAgg</a> · All rights reserved.   </div> </div> </div> </footer>   <script>(function(){const defaultTheme = "dark";
+
+  if (window.basic_script) {
+    return;
+  }
+
+  window.basic_script = true;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+
+  const initTheme = function () {
+    if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+      applyTheme(defaultTheme.replace(':only', ''));
+    } else if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  };
+  initTheme();
+
+  function attachEvent(selector, event, fn) {
+    const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.addEventListener(event, (e) => fn(e, elem), false);
+      });
+    }
+  }
+
+  const onLoad = function () {
+    let lastKnownScrollPosition = window.scrollY;
+    let ticking = true;
+
+    attachEvent('#header nav', 'click', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
+      elem.classList.toggle('expanded');
+      document.body.classList.toggle('overflow-hidden');
+      document.getElementById('header')?.classList.toggle('h-screen');
+      document.getElementById('header')?.classList.toggle('expanded');
+      document.getElementById('header')?.classList.toggle('bg-page');
+      document.querySelector('#header nav')?.classList.toggle('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
+      if (defaultTheme.endsWith(':only')) {
+        return;
+      }
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
+      const network = elem.getAttribute('data-aw-social-share');
+      const url = encodeURIComponent(elem.getAttribute('data-aw-url'));
+      const text = encodeURIComponent(elem.getAttribute('data-aw-text'));
+
+      let href;
+      switch (network) {
+        case 'facebook':
+          href = `https://www.facebook.com/sharer.php?u=${url}`;
+          break;
+        case 'twitter':
+          href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+          break;
+        case 'linkedin':
+          href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+          break;
+        case 'whatsapp':
+          href = `https://wa.me/?text=${text}%20${url}`;
+          break;
+        case 'mail':
+          href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;
+          break;
+
+        default:
+          return;
+      }
+
+      const newlink = document.createElement('a');
+      newlink.target = '_blank';
+      newlink.href = href;
+      newlink.click();
+    });
+
+    function appyHeaderStylesOnScroll() {
+      const header = document.querySelector('#header[data-aw-sticky-header]');
+      if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
+        document.getElementById('header').classList.add('scroll');
+      } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+        document.getElementById('header').classList.remove('scroll');
+      }
+      ticking = false;
+    }
+    appyHeaderStylesOnScroll();
+
+    attachEvent([document], 'scroll', function () {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          appyHeaderStylesOnScroll();
+        });
+        ticking = true;
+      }
+    });
+  };
+  const onPageShow = function () {
+    document.documentElement.classList.add('motion-safe:scroll-smooth');
+    const elem = document.querySelector('[data-aw-toggle-menu]');
+    if (elem) {
+      elem.classList.remove('expanded');
+    }
+    document.body.classList.remove('overflow-hidden');
+    document.getElementById('header')?.classList.remove('h-screen');
+    document.getElementById('header')?.classList.remove('expanded');
+    document.querySelector('#header nav')?.classList.add('hidden');
+  };
+
+  window.onload = onLoad;
+  window.onpageshow = onPageShow;
+
+  document.addEventListener('astro:after-swap', () => {
+    initTheme();
+    onLoad();
+    onPageShow();
+  });
+})();</script>  </body> </html>

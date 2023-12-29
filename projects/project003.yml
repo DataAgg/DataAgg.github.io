@@ -1,0 +1,378 @@
+title: 云南润蔬配送管理系统v2升级方案
+unit: '元'
+vault: 80
+symbol1: '元'
+symbol2: '万元'
+manTypes:
+  teamLeader: 800
+  designer: 450
+  webDeveloper: 600
+  serverDeveloper: 550
+  contractDeveloper: 700
+  tester: 350
+  maintenanceEngineer: 300
+  writer: 200
+  trainer: 300
+  marketer: 400
+sectionsBudgets: [800000, 350000, 300000]
+sections:
+  - title: 系统v2功能升级开发
+    category: "升级开发"
+    start: "2022-09-01T00:00:00.000Z"
+    end: "2023-02-05T00:00:00.000Z"
+    description: 系统v2功能的需求分析、详细功能设计、功能开发测试、历史数据迁移及正式版本上线
+    tasks:
+      - id: t101
+        task: v2需求分析讨论, 2022-09-01, 10d
+        costs:
+          teamLeader: [2, 3]
+          marketer: [2, 3]
+        status: finished
+        category: 需求分析
+        description: 组织核心团队进行头脑风暴，收集整理核心业务需求
+      - id: t102
+        task: v2功能详细设计, after t101, 30d
+        costs:
+          teamLeader: [3, 30]
+          designer: [1, 15]
+          webDeveloper: [3, 10]
+          serverDeveloper: [2, 10]
+        status: finished
+        category: 详细设计
+        description: 根据需求分析结果,设计系统功能模块, 业务流程及业务对象关系
+      - id: t103
+        task: 制定开发计划, after t102, 3d
+        costs:
+          teamLeader: [2, 3]
+          webDeveloper: [3, 3]
+          serverDeveloper: [3, 3]
+        status: finished
+        category: 详细设计
+        description: 针对需求设计及现有资源，与项目组成员沟通协调，详细设计安排开发计划
+      - id: t104
+        task: 内部演示环境搭建, after t103, 10d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 2]
+          webDeveloper: [3, 3]
+          serverDeveloper: [3, 3]
+          maintenanceEngineer: [1, 3]
+        status: finished
+        category: 系统部署
+        description: 购买云服务器，部署开发测试环境，申请认证测试环境所必须的企业认证
+      - id: t105
+        task: 详细设计说明, after t104, 5d
+        costs:
+          teamLeader: [3, 5]
+          webDeveloper: [5, 5]
+          serverDeveloper: [5, 5]
+          tester: [5, 5]
+        status: finished
+        category: 详细设计
+        description: 对所有设计、开发、测试人员讲解功能模块详细设计
+      - id: t106
+        task: 系统界面设计, after t105, 5d
+        costs:
+          teamLeader: [1, 3]
+          designer: [1, 5]
+        status: finished
+        category: 详细设计
+        description: UI设计师按照详细功能文档设计前端界面进行美化设计，准备相关UI素材
+      - id: t107
+        task: java端框架升级, after t105, 10d
+        costs:
+          teamLeader: [1, 5]
+          serverDeveloper: [3, 10]
+        status: finished
+        category: 升级改造
+        description: 对现有系统的java端进行升级改造,实现基础版本升级
+      - id: t108
+        task: 管理端框架升级, after t106, 5d
+        costs:
+          teamLeader: [1, 5]
+          designer: [1, 3]
+          webDeveloper: [5, 5]
+        status: finished
+        category: 升级改造
+        description: 管理端框架及类库升级,完善构建工具
+      - id: t109
+        task: 前端界面美化, after t108, 5d
+        costs:
+          teamLeader: [1, 1]
+          designer: [1, 5]
+          webDeveloper: [5, 5]
+        status: working
+        category: 系统开发
+        description: 按照设计师提供的系统界面设计稿，进行网站前端界面升级
+      - id: t110
+        task: 移动支付集成, after t108, 15d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 3]
+          webDeveloper: [3, 5]
+          serverDeveloper: [3, 10]
+        status: working
+        category: 系统开发
+        description: 针对市场需求，集成支持微信支付、支付宝、云闪付等移动支付
+      - id: t111
+        task: 配送下单页面升级改造, after t109, 7d
+        costs:
+          teamLeader: [1, 3]
+          webDeveloper: [5, 5]
+          serverDeveloper: [1, 3]
+        category: 系统开发
+        description: 按照详细设计重新开发新版配送下单页面
+      - id: t112
+        task: 企业端安全加密业务数据, after t111, 20d
+        costs:
+          teamLeader: [2, 1]
+          webDeveloper: [3, 15]
+          serverDeveloper: [1, 15]
+        category: 系统开发
+        description: 针对企业端的安全加密详细设计开发前端及浏览器插件，服务端处理加密业务数据
+      - id: t113
+        task: 产品信息库优化, after t108, 10d
+        costs:
+          teamLeader: [2, 1]
+          webDeveloper: [3, 10]
+          serverDeveloper: [5, 10]
+        status: working
+        category: 系统开发
+        description: 调整产品信息库数据结构，支持更复杂的SKU信息维护
+      - id: t114
+        task: 库存的进销存管理, after t113, 15d
+        costs:
+          teamLeader: [2, 1]
+          webDeveloper: [5, 15]
+          serverDeveloper: [3, 10]
+        category: 系统开发
+        description: 针对不同阶段的货品，进行库存记录管理
+      - id: t115
+        task: 配送业务流程优化, after t114, 15d
+        costs:
+          teamLeader: [2, 1]
+          webDeveloper: [3, 5]
+          serverDeveloper: [3, 10]
+        category: 系统开发
+        description: 按照市场需求，优化调整配送业务流程，增加更多的可配置选项，以便适应更多的企业特殊需求
+      - id: t116
+        task: 其他功能细节完善, after t115, 11d
+        costs:
+          teamLeader: [2, 1]
+          webDeveloper: [3, 10]
+          serverDeveloper: [2, 10]
+        category: 系统开发
+        description: 完善之前遗留的功能完善开发工作
+      - id: t119
+        task: 企业员工认证, after t111, 5d
+        costs:
+          teamLeader: [2, 1]
+          webDeveloper: [3, 5]
+          serverDeveloper: [2, 5]
+        category: 系统开发
+        description: 实现企业员工及家属注册认证，并定制专属下单页面
+      - id: t120
+        task: bug修复与功能完善1, after t111, 39d
+        costs:
+          teamLeader: [2, 30]
+          webDeveloper: [5, 30]
+          serverDeveloper: [5, 30]
+        category: 系统开发
+        description: bug修复及功能细节完善
+      - id: t121
+        task: 前后端集成开发, 2023-02-01, 10d
+        costs:
+          teamLeader: [2, 3]
+          designer: [1, 5]
+          webDeveloper: [3, 8]
+          serverDeveloper: [3, 8]
+        category: 系统开发
+        description: 系统前后端集成开发,联调相关业务功能模块
+  - title: 系统实施培训
+    category: "系统实施"
+    start: "2023-02-05T00:00:00.000Z"
+    end: "2023-04-10T00:00:00.000Z"
+    description: 交易中心系统实体公司落地相关的项目实施工作及相关业务人员的技能培训与技术支持，并根据实际市场需求及客户功能反馈完善现有系统功能细节
+    tasks:
+      - id: t301
+        task: 制定实施计划, 2023-01-02, 3d
+        costs:
+          teamLeader: [3, 3]
+          marketer: [2, 3]
+          trainer: [2, 3]
+        category: 系统实施
+        description: 结合业务部门推广情况,制定详细的系统上线发布实施计划
+      - id: t302
+        task: 内部培训, after t301, 7d
+        costs:
+          teamLeader: [2, 7]
+          marketer: [2, 7]
+          trainer: [2, 7]
+          writer: [2, 7]
+          tester: [5, 7]
+        category: 系统实施
+        description: 根据需求分析结果,设计系统v1版本的功能模块, 业务流程及业务对象关系
+      - id: t304
+        task: 历史数据迁移, after t302, 30d
+        costs:
+          teamLeader: [2, 20]
+          marketer: [1, 10]
+          webDeveloper: [3, 20]
+          serverDeveloper: [3, 20]
+          tester: [3, 10]
+          maintenanceEngineer: [1, 5]
+        category: 系统实施
+        description: 按照相关业务数据结构变更记录更新整理所有历史业务数据
+      - id: t305
+        task: 集成测试, 2023-02-10, 14d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 5]
+          webDeveloper: [3, 10]
+          serverDeveloper: [2, 10]
+          tester: [3, 10]
+        category: 系统开发
+        description: 对系统进行完整的功能测试及压力测试
+      - id: t306
+        task: bug修复与功能完善2, 2023-02-10, 14d
+        costs:
+          teamLeader: [2, 5]
+          webDeveloper: [5, 10]
+          serverDeveloper: [3, 10]
+        category: 系统开发
+        description: 针对内部测试及实际业务实施,改进完善系统功能细节
+      - id: t307
+        task: 系统正式上线, 2023-03-01, 1d
+        costs:
+          teamLeader: [3, 1]
+          marketer: [1, 1]
+          webDeveloper: [5, 1]
+          serverDeveloper: [5, 1]
+          tester: [10, 1]
+          maintenanceEngineer: [2, 1]
+        category: 系统上线
+        description: 系统正式上线发布运行
+      - id: t308
+        task: bug修复与功能完善3, after t307, 30d
+        costs:
+          teamLeader: [3, 5]
+          webDeveloper: [2, 20]
+          serverDeveloper: [2, 10]
+          tester: [5, 10]
+        category: 系统运维
+        description: 完善系统功能细节,修复bug
+  - title: 系统功能细节完善升级
+    category: "升级维护"
+    start: "2023-03-15T00:00:00.000Z"
+    end: "2023-04-15T00:00:00.000Z"
+    description: 系统2期功能内容开发
+    tasks:
+      - id: t401
+        task: 2期需求分析讨论, 2023-03-16, 3d
+        costs:
+          teamLeader: [3, 3]
+          marketer: [1, 3]
+          webDeveloper: [1, 3]
+          serverDeveloper: [1, 3]
+          tester: [2, 3]
+          trainer: [2, 3]
+          writer: [2, 4]
+        category: 详细设计
+        description: 组织核心团队进行头脑风暴，收集整理系统2期业务需求
+      - id: t402
+        task: 多种客户群体的前端界面开发, after t401, 15d
+        costs:
+          teamLeader: [2, 10]
+          designer: [1, 3]
+          webDeveloper: [5, 15]
+          serverDeveloper: [3, 10]
+          maintenanceEngineer: [1, 5]
+        category: 功能开发
+        description: 针对不同的客户群体进行前端界面开发。包含微信小程序，H5端，企业端PC加密界面，企业内部客户专属界面设计
+      - id: t403
+        task: 以家庭为统一主体, after t401, 5d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 3]
+          webDeveloper: [5, 5]
+          serverDeveloper: [5, 5]
+        category: 功能开发
+        description: 以家庭为统一主体进行整体的营销推广，最大化客户终身价值
+      - id: t404
+        task: 生鲜商城开发, after t401, 15d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 3]
+          webDeveloper: [5, 15]
+          serverDeveloper: [3, 15]
+        category: 功能开发
+        description: 完善的生鲜配送商城App功能开发
+      - id: t405
+        task: 企业专属定制功能开发, after t403, 8d
+        costs:
+          teamLeader: [2, 5]
+          marketer: [1, 3]
+          webDeveloper: [3, 8]
+          serverDeveloper: [2, 2]
+        category: 功能开发
+        description: 为企业增加专属的定制功能，让企业可以直接面对员工家属及客户的配送需求
+      - id: t404
+        task: 功能测试与验收2, after t402, 5d
+        costs:
+          teamLeader: [1, 5]
+          designer: [1, 3]
+          marketer: [1, 3]
+          tester: [1, 5]
+        category: 功能测试
+        description: 测试功能模块，跟进bug修复
+      - id: t405
+        task: bug修复与功能完善4, after t403, 15d
+        costs:
+          teamLeader: [1, 5]
+          webDeveloper: [3, 5]
+          serverDeveloper: [2, 10]
+          contractDeveloper: [2, 10]
+          maintenanceEngineer: [1, 5]
+        category: 功能开发
+        description: 系统前后端集成开发,联调相关业务功能模块，完善系统功能细节,修复bug
+      - id: t406
+        task: 更新部署, after t405, 3d
+        costs:
+          teamLeader: [2, 3]
+          tester: [1, 3]
+          maintenanceEngineer: [1, 3]
+        category: 系统实施
+        description: 完成系统的升级部署
+feeCategories:
+  外部采购:
+    - title: 注册认证
+      specification: 域名、SSL证书及其他平台认证
+      quantity: 5
+      price: 1000
+      description: 1年
+    - title: 云服务器租赁
+      specification: 云服务器租赁, 1台主服务器+2台从服务器+1台备份/部署服务器
+      quantity: 1
+      price: 50000
+      description: 1年
+    - title: 第三方服务租用
+      specification: 相关第三方服务(CDN、邮件服务、短信网关、机器人识别等)的租用
+      quantity: 1
+      price: 35000
+      description: 1年
+  系统服务:
+    - title: 系统运维
+      specification: 定期对系统进行常规运维工作，保证系统正常运作
+      quantity: 2
+      price: 5000
+      description: 2人1年
+    - title: 技术支持
+      specification: 系统技术支持, 24小时*7天
+      quantity: 4
+      price: 5000
+      description: 4人1年
+    - title: 平台运营推广
+      specification: 平台新闻资讯编辑发布, 2-5次/周
+      quantity: 3
+      price: 10000
+      description: 2人1年

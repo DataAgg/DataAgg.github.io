@@ -1,0 +1,705 @@
+<!DOCTYPE html><html lang="en" dir="ltr" class="2xl:text-[20px]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="sitemap" href="/sitemap-index.xml"><link rel="shortcut icon" href="/_astro/favicon.sNBBSGPZ.ico"><link rel="icon" type="image/svg+xml" href="/_astro/favicon.jAUM_1GV.svg"><link rel="mask-icon" href="/_astro/favicon.jAUM_1GV.svg" color="#8D46E7"><link rel="apple-touch-icon" sizes="180x180" href="/_astro/apple-touch-icon.qzCMJsat.png"><style is:global>
+  :root {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+    --aw-color-primary: #6966ff;
+    --aw-color-secondary: #3ed9a4;
+    --aw-color-accent: #e45555;
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: #181818;
+    --aw-color-text-muted: rgb(0x18 0x18 0x18 / 66%);
+    --aw-color-bg-page: #ffffff;
+    --aw-color-bg-page-dark: #ffffff;
+    --aw-color-layer1: #ffffff;
+    --aw-color-layer2: #e9ecee;
+    --aw-color-layer3: #ffffff;
+    --aw-color-layer4: #f7f8fa;
+    --aw-color-layer5: #ffffff;
+    --aw-color-layer6: #edf0f2;
+    --aw-color-layer7: #d5dadf;
+    --aw-color-layer8: #ffffff;
+
+    ::selection {
+      background-color: lavender;
+    }
+  }
+
+  .dark {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+    --aw-color-primary: #6966ff;
+    --aw-color-secondary: #3ed9a4;
+    --aw-color-accent: #e45555;
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: #fafafa;
+    --aw-color-text-muted: rgb(0xfa 0xfa 0xfa / 66%);
+    --aw-color-bg-page: #000000;
+    --aw-color-bg-page-dark: #000000;
+    --aw-color-layer1: #000000;
+    --aw-color-layer2: #18181b;
+    --aw-color-layer3: #0c0c0d;
+    --aw-color-layer4: #212124;
+    --aw-color-layer5: #303033;
+    --aw-color-layer6: #3b3b3f;
+    --aw-color-layer7: #494950;
+    --aw-color-layer8: #56565c;
+
+    ::selection {
+      background-color: #181825;
+      color: snow;
+    }
+  }
+</style><script>(function(){const defaultTheme = "dark";
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');
+
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.checked = theme !== 'dark';
+      });
+    }
+  }
+
+  if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+    applyTheme(defaultTheme.replace(':only', ''));
+  } else if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+})();</script><title>Float Capital — TokenAgg DAO</title>
+<meta name="description" content="FLOAT CAPITAL(白皮书)" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://dataagg.github.io/floatcapital" />
+<meta property="og:title" content="Float Capital" />
+<meta property="og:description" content="FLOAT CAPITAL(白皮书)" />
+<meta property="og:url" content="https://dataagg.github.io/floatcapital" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://dataagg.github.io/imgs/blogs/floatcapital.cr.png" />
+
+<meta property="og:locale" content="en" />
+<meta property="og:site_name" content="TokenAgg DAO" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@watano" />
+<meta name="twitter:creator" content="@watano" /><!-- Uncomment line below to activate View Transitions --><!-- <ViewTransitions fallback="swap" /> --><link rel="stylesheet" href="/_astro/click-through.45fq7QCF.css" /></head> <body class="antialiased text-default bg-page tracking-tight">   <header class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-aw-sticky-header id="header"> <div class="absolute inset-0"></div> <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl"> <div class="flex justify-between"> <a class="flex items-center" href="/"> <img src="/_astro/logo-long-dark.TphFalWY_Z1Yevjd.svg" id="toplogo" alt="TokenAgg DAO" width="199" height="64" loading="lazy" decoding="async"><script>(function(){const defaultTheme = "dark";
+
+  if (document.documentElement.classList.contains('dark')) {
+    document.getElementById('toplogo').src = '/imgs/logo-long-dark.svg';
+  } else {
+    document.getElementById('toplogo').src = '/imgs/logo-long-light.svg';
+  }
+})();</script> </a> <div class="flex items-center md:hidden"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> </div> <nav class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 项目  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">  <symbol id="ai:tabler:chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></symbol> <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/project/index.html?id=001"> TokenAgg DAO </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/project/index.html?id=012"> DApp Admin </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 解决方案  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution1"> 生鲜配送 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution2"> 诊所联盟 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution3"> 妙蛙云池 </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 公司  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/teams"> 关于我们 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/intro"> 公司价值 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/story"> 成功案例 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/privacy"> 隐私条款 </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 博客  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/项目推荐"> 项目推荐 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/基础知识"> 基础知识 </a> </li> </ul>  </li> </ul> </nav> <div class="hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0"> <div class="items-center flex justify-between w-full md:w-auto"> <div class="flex"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 md:inline-block" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol> <use  xlink:href="#ai:tabler:sun"></use> </svg></button> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS Feed" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">  <symbol id="ai:tabler:rss"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></symbol> <use  xlink:href="#ai:tabler:rss"></use> </svg> </a> </div> <span class="ml-4 rtl:ml-0 rtl:mr-4"> <a class="btn-secondary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" target="_blank" rel="noopener noreferrer" href="https://github.com/dataagg">Github</a> </span> </div> </div> </div> </header>  <main>  <section class="py-8 sm:py-16 lg:py-20 mx-auto"> <article> <header class=""> <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"> <p> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">  <symbol id="ai:tabler:clock"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 7v5l3 3"/></g></symbol> <use  xlink:href="#ai:tabler:clock"></use> </svg> <time datetime="Tue Dec 07 2021 08:00:00 GMT+0800 (香港标准时间)" class="inline-block">Dec 7, 2021</time>  
+· <a class="capitalize hover:underline inline-block" href="/category/项目推荐"> 项目推荐 </a>   · 35 min read </p> </div> <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> Float Capital </h1> <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"> FLOAT CAPITAL(白皮书) </p> <img src="/imgs/blogs/floatcapital.cr.png" width="900" height="506" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 506px; aspect-ratio: 1.7786561264822134; width: 100%;" class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700" alt="FLOAT CAPITAL(白皮书)" loading="eager" decoding="async"> </header> <div class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"> <h1 id="float-capital-alpha-whitepaper">FLOAT CAPITAL (Alpha Whitepaper)</h1>
+<p>Perpetual synthetic asset protocol 永久合成资产协议</p>
+<ul>
+<li>
+<p>Jonjon Clark</p>
+<p>Mphil。Data Science，BSc (Hons) Computer Science</p>
+</li>
+<li>
+<p>Jason Smythe</p>
+<p>BSc (Hons) Computer Science and Mathematics</p>
+</li>
+<li>
+<p>Denham Preen</p>
+<p>BSc (Hons) Computer Science</p>
+</li>
+<li>
+<p>Paul Freund</p>
+<p>BSc (Hons) Computer Science，Hons Philosophy</p>
+</li>
+<li>
+<p>Guy Paterson-Jones</p>
+<p>MSc Mathematics</p>
+</li>
+<li>
+<p>WooSung Dong</p>
+<p>Hons。Actuarial Science</p>
+</li>
+<li>
+<p>Michael Young</p>
+<p>BEng (Hons) Computer and Electrical Engineering</p>
+</li>
+<li>
+<p>Jono VDM</p>
+<p>Hons。Finance and Investments。Passed CFA III exam。</p>
+</li>
+<li>
+<p>Stent</p>
+<p>Physics and Mathematics</p>
+</li>
+</ul>
+<h2 id="摘要">摘要</h2>
+<p>Float is a synthetic asset protocol providing decentralized，trustless，and efficient exposure to arbitrary asset classes。The Float alpha smart contracts are incentives based perpetual smart contracts that algorithmically react to market demand for long and short positions on a synthetic asset。Market demand triggers dynamic adjustments of additional protocol rewards (alphaFLT and raw yield) rewarded to users taking valuable market positions。Synthetic asset exposure to the underlying asset class may dynamically fluctuate based on imbalanced market demand for various positions。</p>
+<p>Float 是一种合成资产协议，为任意资产类别提供分散的、不可信的、高效的公开。Float alpha 智能合约是基于永久智能合约的激励机制，通过算法对市场对合成资产的多头和空头头寸的需求做出反应。市场需求触发了附加协议奖励 (阿尔法 flt 和原始收益) 的动态调整，这些奖励奖励给拥有宝贵市场地位的用户。综合资产对基础资产类别的风险敞口可能会根据不同头寸的不平衡市场需求动态波动。</p>
+<p>The fundamental design of the protocol is highly scalable and abstracts all complexity from the end user allowing fast entry and exit with no minimum trade sizes。Synthetic asset positions can be minted without over-collateralization and without the threat of being liquidated。</p>
+<p>该协议的基本设计具有高度可伸缩性，并将所有的复杂性从最终用户中抽象出来，允许快速进出，而不需要最小的交易规模。合成资产头寸可以在没有过度担保的情况下建立，也没有被清算的威胁。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#F97583">pragma</span><span style="color:#85E89D"> solidity</span><span style="color:#79B8FF"> 0.8.9</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#9ECBFF"> "@float-capital/contracts/Degen.sol"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#9ECBFF"> "@float-capital/contracts/Chad.sol"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#9ECBFF"> "@float-capital/contracts/Ape.sol"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">contract</span><span style="color:#B392F0"> FloatCapital</span><span style="color:#F97583"> is</span><span style="color:#B392F0"> Degen</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">Chad</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">Ape</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">	// Your move ...</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="1-概述">1 概述</h2>
+<p>Float Capital allows users to create <strong>long or short tokenized positions referencing any arbitrary asset</strong>。</p>
+<p>Float Capital 允许用户创建引用任意资产的多头或空头 token 化头寸。</p>
+<p>To expand further：</p>
+<ul>
+<li>
+<p>vanilla or leveraged</p>
+</li>
+<li>
+<p>long or short</p>
+</li>
+<li>
+<p>perpetual</p>
+</li>
+<li>
+<p>tokenized exposure (ERC20)</p>
+</li>
+<li>
+<p>to arbitrary asset classes (ETH，BTC，gas，NFTs，commodities …)</p>
+</li>
+<li>
+<p>without liquidations</p>
+</li>
+</ul>
+<p>This DeFi lego is extremely useful for many different reasons to many different users。DeFi 乐高对于许多不同的用户，不同的原因都是相当有用的。</p>
+<h3 id="11-alpha-发布">1.1 Alpha 发布</h3>
+<p>Creating a highly complex and innovative financial protocol is difficult。It presents unique engineering，economic and financial challenges。The core philosophy of Float is rapid and iterative development allowing us to improve and scale at the fastest possible rate while providing safety。To meet the above goal an alpha version has been deployed affording the following advantages：</p>
+<ul>
+<li>
+<p>Early user feedback。</p>
+</li>
+<li>
+<p>Test and validate incentive models。</p>
+</li>
+<li>
+<p>Quicker release cycle。</p>
+</li>
+<li>
+<p>Reduce legacy。</p>
+</li>
+<li>
+<p>Improve infrastructure。</p>
+</li>
+</ul>
+<p>The alpha version of Float Capital is deployed live on Polygon with the intention of releasing a new protocol version 4-6 months after the alpha launch based on the insights it affords。To use the live alpha (real money)，visit Float Capital and mint a synthetic asset in under a minute。Please note while the protocol is audited，many risks exist。</p>
+<h3 id="12-白皮书结构">1.2 白皮书结构</h3>
+<p>This paper will revolve around explaining the design of the <strong>alpha system as depicted in Figure 1</strong>。Sections will continually reference Figure 1 throughout the paper。</p>
+<h2 id="2-合成资产">2 合成资产</h2>
+<p>Please refer to label 1 in Figure 1 for this section。</p>
+<h3 id="21-摘要">2.1 摘要</h3>
+<p>A user begins by speculating on a certain asset class (long or short)。The user provides DAI，a stable coin pegged to the dollar，and in return receives a synthetic asset representing their position。This receipt is in the form of an ERC20 token。The price of this ERC20 token is such that it tracks the underlying asset class。The user is able to do 3 things with their synthetic asset token。</p>
+<p>用户从投机某一资产类别 (做多或做空) 开始。用户提供 DAI，这是一种与美元挂钩的稳定货币，作为回报，用户将获得代表其仓位的合成资产。这个收据是 ERC20 令牌的形式。这个 ERC20 代币的价格是这样的，它跟踪基础资产类别。用户可以使用合成资产令牌做 3 件事。</p>
+<ul>
+<li>
+<p>Sell the synth on the open market。在开放市场上销售合成资产</p>
+<p><img src="/imgs/ohm/image-20211230223018386.png" alt="Figure 1: Float Capital Alpha System"></p>
+</li>
+<li>
+<p>Stake the synth to earn alphaFLT。质押合成资产赚取 alphaFLT</p>
+</li>
+<li>
+<p>Burn the synth to redeem DAI equal to the value of the synth burned。燃烧合成资产赎回与合成资产等价的 DAI</p>
+</li>
+</ul>
+<h3 id="22-动机">2.2 动机</h3>
+<p>Usually synthetic assets are based upon traditional financial instruments，allowing people to gain exposure to <code>$AMZN</code> or the <code>$SP500</code>，for example，on the blockchain。Yet，this is just one of the more common use cases of synthetic assets。Synthetic assets can be created from any quantifiable data feed allowing users to gain exposure to a far larger universe of assets。</p>
+<p>In a traditional environment，it would allow users to go long or short on say，for example，the average amount of rainfall in Bordeaux，France，this would allow wine farmers to hedge against poor crop yields in a given season by going short while allowing guesthouses in the region to hedge against rainy weather and a lack in tourism by going long。</p>
+<p>In a much more practical and relevant DeFi scenario，it gives users the power to perform powerful DeFi strategies through synthetic assets that previously have not existed。For example，an OHM synth can allow users to hedge and earn high yields on staking while maintaining a delta neutral position。</p>
+<h3 id="23-方法">2.3 方法</h3>
+<p>All long and short synthetic assets are ERC20 tokenized positions allowing composibiliy across the DeFi ecosystem。The tokens are engineered such that a minted position settles at the next price update received by the smart contract。This system is known as Next Price Execution and thwarts attempts at front running to extract value from the system。Custom hooks in the ERC20 tokens allow the tokens to be minted in a single transaction step and available for immediate use upon settlement (transfer，stake，burn) without any additional user interaction。This hook based lazy allocation method allows a superior user experience where the complexity of the front running prevention is entirely abstracted from the user。</p>
+<p>所有的多头和空头合成资产都是 ERC20 通证化的头寸，允许在 DeFi 生态系统中进行组合。代币被设计成在智能合约接收到的下一个价格更新时建立头寸。这个系统被称为下一个价格执行，它阻止了从系统中获取价值的尝试。ERC20 令牌中的自定义钩子允许令牌在单个交易步骤中铸造，并可在结算 (转让、持股、燃烧) 时立即使用，无需任何额外的用户交互。这种基于钩子的延迟分配方法提供了卓越的用户体验，在这种体验中，前端运行预防的复杂性完全从用户中抽象出来。</p>
+<p>All synthetic mints and redeems are batched into a single efficient order that is executed upon the next oracle price update。Coupled together with hook execution，this allows arbitrary scaling of entry and exits into the system，making the system suitable for extremely large trade volumes。Oracle price updates from Chainlink occur as fast as every 27 seconds on the Polygon network，allowing extreme speed for entry and exit to the system (sub 1 minute)。</p>
+<p>所有的合成铸币和赎回被批量成一个有效的订单，在下一次 oracle 价格更新时执行。再加上钩子的执行，这允许任意扩展进入和退出系统，使系统适合于非常大的交易量。在 Polygon 网络上，来自 Chainlink 的 Oracle 价格更新每27秒发生一次，这使得进入和退出系统的速度非常快 (不到1分钟)。</p>
+<h2 id="3-收益与激励">3 收益与激励</h2>
+<p>Please refer to label 2 in Figure 1 for this section。</p>
+<h3 id="31-摘要">3.1 摘要</h3>
+<p>All underlying capital that is deposited by users to mint synthetic assets is deposited into a smart contract known as the yield manager。The yield manager lends this underlying capital out in order to earn interest。Interest earned accrues to both synthetic assets (increasing the price) and the treasury。The split is based on the balance of liquidity in the long and short positions。</p>
+<p>用户为创造合成资产而存入的所有基础资本都被存入一个名为收益管理器的智能合约。收益管理器将这些资本借出以赚取利息。合成资产 (提高价格) 和国债的利息收入。这种分割是基于多头和空头头寸的流动性平衡。</p>
+<h3 id="32-方法">3.2 方法</h3>
+<p>The yield manager is a flexible contract that can plug into any yield bearing protocol。Different yield protocols have varying levels of risk and associated returns。From day 1，Float Capital is using Aave in the alpha。Aave is the largest blue chip yield protocol and provides desired risk adjusted returns。Float has been implemented in a modular format to allow use of other yield protocols in the future。A yield manager is deployed per market，allowing scenarios where different synthetic markets may seek yield in differing venues，congruent with the synthetic markets appetite for risk。The decisions above will be conducted by the community (Float Capital DAO) in the near future。</p>
+<p>收益管理器是一个灵活的智能合同，可以插入任何收益 bearing 协议。不同的收益协议有不同程度的风险和相关的回报。从第一天开始，Float Capital 就在 alpha 阶段使用 Aave。Aave 是最大的蓝筹股收益率协议，提供理想的风险调整回报。Float 以模块化格式实现，允许在未来使用其他收益协议。每个市场都配置一个收益管理器，允许不同的合成市场在不同的场所寻求收益，与合成市场的风险偏好相一致。上述决定将在不久的将来由社区 (Float Capital DAO) 执行。</p>
+<h3 id="33-收益分离">3.3 收益分离</h3>
+<p>Yield is split between the Treasury and the underlying synthetic market。Yield sent to the treasury is protocol revenue。Yield sent to the underlying synthetic market，increases the collateral backing each token and therefore increases the synthetic token price。</p>
+<p>收益在国债和基础的合成市场之间分配。送到财政部的收益是协议收入。发送到基础合成市场的收益率，增加了支持每个代币的抵押品，因此增加了合成代币的价格。</p>
+<p>The split of interest sent between the treasury and synthetic market is a simple linear function dependant on the balance of long and short liquidity in the market。All yield flows to the treasury if there is equal long and short liquidity (yield is not required to incentivize certain market positions)。The amount of yield flowing to the underlying market increases as the market is more imbalanced。All yield allocated to the underlying synthetic market is allocated to the position (long or short) with less liquidity，as an incentive to attract more liquidity into that position。The purpose being to incentivize equal liquidity in long and short positions。</p>
+<p>国债和合成市场之间的利息分配是一个简单的线性函数，它依赖于市场中长期和短期流动性的平衡。如果长期流动性和短期流动性相等，所有收益都会流入国库 (为了刺激某些市场头寸，不需要收益率)。流入基础市场的收益率随着市场的不平衡而增加。所有分配到基础合成市场的收益都被分配到流动性较低的头寸 (多仓或空仓)，以吸引更多的流动性进入该头寸。其目的是为了激励多头和空头的流动性。</p>
+<p>The yield generated by the whole market is more than would be generated by one side (e.g. if the users of one side put their capital into the lending platform instead of into a Float market) so if all the yield is given to the underbalanced side then an incentive is created for users to add liquidity to that side since they would be earning more yield than if they went directly to the lending platform。In reality it is slightly more complicated because there is another actor，<strong>the treasury</strong> (a smart contract)，that is given a portion of the yield。</p>
+<p>整个市场所产生的收益不仅仅是一方所产生的 (例如，如果用户一边把资本的借贷平台而不是变成一个浮动市场) 如果所有的收益给本文一边然后为用户创建一个激励添加流动性那边，因为他们会挣的更多收益比直接去借贷平台要高。在现实中，这要稍微复杂一些，因为还有另一个参与者，即财政部 (智能合约)，它获得了一部分收益。</p>
+<p>A simple example is as follows。Imagine the capital in the market was imbalanced：the short side only had $100 000 capital while the long side had $500 000。Float will invest the total capital into a lending platform，which we will suppose has an APY (projected interest rate per year) of 8%. If all the yield is given to the short side then the short side would receive a yield of $600 000×8% per year，which is an effective APY of</p>
+<p>下面是一个简单的例子。想象一下市场中的资本是不平衡的：做空方只有 10 万美元的资本，而做多方有 50 万美元。Float 将把全部资金投入一个贷款平台，我们假设这个平台的 APY (预计年利率) 为 8%。如果所有的收益都给了做空方，那么做空方将获得$600 000×8% /年的收益，这是一个有效的 APY</p>
+<p>$$
+\frac {$600000} {$100000} ∗ 8% = 48%
+$$</p>
+<h2 id="4-合成资产价格行为">4 合成资产价格行为</h2>
+<p>Please refer to label 3 in Figure 1 for this section。</p>
+<h3 id="41-摘要">4.1 摘要</h3>
+<p>Every few minutes，the smart contract will receive a new price for the underlying asset class。If the price of the asset has increased，underlying short liquidity will transfer to underlying long liquidity。If the price of the asset has decreased，the converse is true。The amount of value transferred between long and shorts is based on the current liquidity held in long and short positions，which can vary based on market demand。The variance in liquidity of long and short positions，can cause the synthetic asset to have floating exposure to the underlying asset。This is expanded upon below。</p>
+<p>每隔几分钟，智能合约就会收到标的资产类别的新价格。如果资产价格上涨，标的短期流动性将转移到标的长期流动性。如果资产的价格下降了，反之亦然。多头和空头之间的价值转移是基于多头和空头头寸所持有的当前流动性，这可能会因市场需求而变化。多头和空头头寸的流动性差异，会导致合成资产对标的资产有浮动风险敞口。这将在下面展开。</p>
+<h3 id="42-敞口基础例子">4.2 敞口基础例子</h3>
+<p>Where long liquidity = short liquidity，($100,000 of long exposure and $100,000 of short exposure) the following is true：</p>
+<p>当多头流动性=空头流动性时 (10 万美元的多头敞口和 10 万美元的空头敞口)，下列情况成立：</p>
+<ul>
+<li>in the case that the underlying asset price increases by 1%, 假设基础资产价格上涨 1%，</li>
+<li>value to shift 1% ∗ $100000 = $1000 价值要移动 1% ∗ $100000 = $1000</li>
+<li>the value of the long side will now be worth $101 000，多头的价值现在是$101,000，</li>
+<li>while the value of the short side will be worth $99 000。而空头的价值是$99,000。</li>
+</ul>
+<p>Note that the value locked in the system is still $200 000。Changes in the price of the asset simply shift the value between the pools of collateral backing the long and short synthetic tokens。As the price increases，value flows from shorts to longs and visa versa。</p>
+<p>请注意，锁定在系统中的价值仍然是 20 万美元。资产价格的变化只是改变了支持多头和空头合成代币的抵押品池之间的价值。随着价格上涨，价值从空头流向多头，反之亦然。</p>
+<p>Now that the value on the long and short side is different，there will be floating exposure。Exposure is always based on the notional value of the market position with less liquidity。In this case，that is now the short side worth $99 000。This means that the long side will only have 99,000 / 101,000 = 98% exposure，while the short side will continue to have 99 000 / 99 000 = 100% exposure。</p>
+<p>既然多头和空头的价值不同，就会出现浮动风险敞口。风险敞口总是基于流动性较差的市场头寸的名义价值。在这种情况下，空头现在价值 99 000 美元。这意味着做多方只有 99,000 / 101,000 = 98%的敞口，而做空方将继续有 99,000 / 99,000 = 100%的敞口。</p>
+<p>Given the above，a subsequent market movement would create the following scernario</p>
+<p>鉴于上述情况，随后的市场走势将产生以下情景</p>
+<ul>
+<li>
+<p>the underlying asset price again increases by 1%, 基础资产价格再次上涨 1%，</p>
+</li>
+<li>
+<p>value to shift is always based on the price movement multiplied by the notional value of the side with less liquidity。Therefore，1% ∗ $99000 = $900 价值转移总是基于价格变动乘以流动性较差一方的名义价值。因此，1% ∗ $99,000 = $900</p>
+</li>
+<li>
+<p>the value of the long side will now be worth $101,900 (101,000+ 900)，多头的价值现在是 101,900 美元 (101,000+ 900)</p>
+</li>
+<li>
+<p>while the value of the short side will be worth $98,100 (99,000 − 900)。而空头的价值为 98,100 美元 (99,000 - 900 美元)。</p>
+</li>
+<li>
+<p>hence mathematically the long side has 98% exposure (1% ∗ 98% ∗ $100000 = $900) as explained。因此，从数学上讲，多头有 98%的敞口 (1% ∗ 98% ∗ $100,000 = $900)。</p>
+</li>
+</ul>
+<p>The reduction in exposure to the underlying asset for the overbalanced side is true for both upward and downward price movements。</p>
+<p>在价格上涨和下跌的情况下，对标的资产的过度平衡敞口的减少都是真实的。</p>
+<h3 id="43-mathematical-formulation-of-floating-point-exposure">4.3 Mathematical Formulation of Floating Point Exposure</h3>
+<h4 id="431-definition-of-exposure">4.3.1 Definition of exposure。</h4>
+<p>It is common in traditional financial markets to talk about ’having exposure’ to an asset。To have exposure to an asset is to be in a position where changes in properties of that asset affect one’s financial investment in that asset。Example：one can be positively exposed to the price of gold，which means that when the price of gold increases then the value of one’s investment will also increase。If the percentage by which the investment changes，𝑝𝐼，is equal to the percentage by which the value of the underlying asset’s property changes，𝑝a，then the exposure is said to be 100%. The exposure can be seen as the factor that 𝑝𝐼 must be multiplied by in order to get 𝑝a。This can be formalized as follows：</p>
+<p>$$
+\begin {aligned} &#x26;
+Ep <em>{a}=p</em> {I} \
+\Rightarrow &#x26; E=p <em>{I}\left(p</em> {a}\right)^{-1}
+\end {aligned}
+$$</p>
+<p>where 𝐸 is the exposure。We can expand the percentage changes in order to get the following definition of exposure：</p>
+<p>$$
+𝐸 = \frac {\Delta I} {I} \frac {a} {\Delta a}
+$$</p>
+<p>where 𝐼 is the value of the investment and a is the value of the property of the underlying asset。In this definition we assume that both values are elements of the real numbers。</p>
+<h4 id="432-market-rebalance-equation">4.3.2 Market rebalance equation。</h4>
+<p>Suppose we have a market whose long &#x26; short synthetic tokens track the value of some property of some underlying asset，a。Suppose also that the total value that has been invested in the long side of the market is l，and the total value in the short side is s。Consider the case where there is a change in the price of the underlying asset，𝛿a。If the change is positive then value needs to shift from the long side to the short side，and vice versa when the change is negative。The value that is shifted between the long and short sides needs to be such that the maximum exposure for both sides is 100%. The following update equation is the one that Float uses in order to achieve this：</p>
+<p>$$
+\Delta l = min (l，s) \frac {\Delta a} {a}
+$$</p>
+<p>$$
+\Delta s = −min (l，s) \frac {\Delta a} {a}
+$$</p>
+<p>You can see that the exposure is always less than 100% by plugging the above values into the exposure equation (1)：</p>
+<p>$$
+𝐸_l = \frac {\Delta l} {l} \frac {a} {\Delta a}
+$$</p>
+<p>$$
+𝐸_l =\frac {min (l，s)} {l} \leq 1
+$$</p>
+<p>$$
+𝐸_s =\frac {\Lambda s} {s} \frac {a} {\Lambda a}
+$$</p>
+<p>$$
+𝐸_s =\frac {−min(l，s)} {l} \leq 1
+$$</p>
+<h4 id="433-differential-equations">4.3.3 Differential equations。</h4>
+<p>Consider the case where m remains fixed and a varies。We can talk about l &#x26; s as functions of a。So (2) &#x26; (3) become</p>
+<p>$$
+\frac {dl} {da} =\frac {min (l，s)} {a}
+$$</p>
+<p>$$
+\frac {ds} {da}= − \frac {min (l，s)} {a}
+$$</p>
+<p>Solving these differential equations results in the following functions for l &#x26; s。The initial conditions are a1,l1，s1。</p>
+<p>When l1 ≤ s1：</p>
+<p>$$
+l(a) =\begin {cases}
+\frac {l_1} {a_1} a：l \leq s \
+−\frac {ma_1} {2a}   + m：l > s \
+\end {cases}
+$$</p>
+<p>$$
+s(a) =\begin {cases}
+−\frac {l_1} {a_1} a + m：l \leq s \
+\frac {ma_1} {2a}：l > s \
+\end {cases}
+$$</p>
+<p>where</p>
+<p>$$
+a_1 =\frac {a_1m} {2l_1}
+$$</p>
+<p>When l1 > s1：</p>
+<p>$$
+l(a) =\begin {cases}
+\frac {m} {2a_2} a：l \leq s \
+−\frac {ma_2} {2a}   + m：l > s \
+\end {cases}
+$$</p>
+<p>$$
+s(a) =\begin {cases}
+−\frac {m} {2a_2} a+m：l \leq s \
+\frac {ma_2} {2a}：l > s \
+\end {cases}
+$$</p>
+<p>where</p>
+<p>$$
+a_2 =\frac {2a_1s_1} {m}
+$$</p>
+<p>The above equations show the value of the long and short positions as a function of the underlying asset price in the scenarios where long liquidity is greater than short liquidity and vice versa。</p>
+<h3 id="44-keeper">4.4 Keeper</h3>
+<p>The mechanic is such that value shifting and interest accrual should take place every time a price update is made available by an oracle。This means that in order for the synthetic to accurately track the underlying assets，a keeper bot is necessary to continually perform this upkeep。</p>
+<p>The first keeper is simply users。All smart contract interactions call a hook that performs this update functionality to ensure an up to date system state。To further improve the accuracy of synth tracking，we have also developed a custom keeper smart contract。When called this smart contract reads whether price updates are available and if so performs upkeep action。The bot uses smart logic to automatically bump gas prices and monitor deviation thresholds of underlying assets ensuring timely upkeep is performed。A redundancy bot further brute force calls the contract periodically if the main bot goes offline。</p>
+<p>The system will be moved to a more decentralized chainlink keepers mechanism when this becomes available on the Polygon network。</p>
+<h2 id="5-质押">5 质押</h2>
+<p>Please refer to label 4 in Figure 1 for this section。</p>
+<h3 id="51-摘要">5.1 摘要</h3>
+<p>Synths can be staked (locked up in a smart contract) in order to earn alphaFLT tokens。The amount of alphaFLT earned is function of the dollar value of the synth staked，the length of time the synth is staked，and the balance of long and short liquidity in the underlying market。Synths may be staked and unstaked at point in time，with users incurring a 0.5% fee when unstaking synthetic assets。</p>
+<p>为了获得 alphaFLT 代币，可以对合成资产进行质押 (锁定在智能合约中)。alphaFLT 赚取的金额是由所押合成资产的美元价值、所押合成资产的时间长度以及基础市场中长期和短期流动性的余额所决定的函数。合成资产可以在某个时间点进行质押和解押，当质押合成资产时，用户需支付 0.5%的费用。</p>
+<h3 id="52-基础">5.2 基础</h3>
+<p>Equal liquidity in long and short positions is desirable as then both long and short synthetic tokens will have perfect exposure (100%) to the underlying asset。Section 2 already described how yield is used in order to incentivize equal liquidity in long and short positions。</p>
+<p>多头和空头头寸的同等流动性是可取的，因为多头和空头合成代币都将对标的资产有完美的敞口 (100%)。第 2 节已经描述了如何利用收益率来激励多头和空头仓位的同等流动性。</p>
+<p>The second mechanism used for this incentivization is the rate at which alphaFLT tokens accrue to long and short liquidity staked。The basic mechanic is that liquidity staked from an underbalanced position will accrue at a much faster rate than the overbalanced position。This obvious incentive here is for users to mint and stake liquidity of the underbalanced side of the market to take advantage of the much higher rate at which alphaFLT is earned。</p>
+<p>用于这种激励的第二种机制是 alphaFLT 代币积累为长期和短期流动性的比率。其基本机制是，欠平衡头寸的流动性积累速度要比超平衡头寸快得多。在这里，这种明显的动机是为了让用户在市场欠平衡的一面铸造和持有流动性，以利用 alphaFLT 赚取的高得多的利率。</p>
+<p>Every couple minutes，a new oracle price update is received and users new positions in the system are processed，leading to continued change in the liquidity balance of longs and shorts。There is a significant engineering challenge in providing a dynamic and accurate rate of alphaFLT accrual for all stakers given the liquidity balance is changing so frequently in markets。Fortunately，we are mathematicians with extensive solidity experience。The following sections outline mathematically how we relied on the technique of memoisation plus incentive curves to achieve this desired result。</p>
+<p>每隔几分钟，就会收到一个新的预言机价格更新，并处理系统中用户的新头寸，导致多头和空头的流动性平衡持续变化。鉴于市场中的流动性平衡变化如此频繁，为所有利益相关者提供一个动态和准确的 alphaFLT 权责发生率是一个重大的工程挑战。幸运的是，我们是有丰富经验的数学家。以下几节从数学上概述了我们如何依赖记忆技术加上激励曲线来达到这个预期的结果。</p>
+<p>Short explanation of the math in <code>_calculateFloatPerSecond</code> function in <code>Staker.sol</code> (link to code) works。</p>
+<h3 id="53-原理">5.3 原理</h3>
+<p>Note that the goal here is to find a way to split up the alphaFLT rewards between the long and short sides of the market。An imbalanced market is undesirable because the exposure on one side will be less than 100%. And so we want to have the alphaFLT rewards adjust in such a way that users are incentivized to rebalance imbalanced markets i.e. give more alphaFLT to the underbalanced side。</p>
+<h4 id="531-key">5.3.1 Key。</h4>
+<p>𝐿 value of the Long market side</p>
+<p>𝑆 value of the Short market side</p>
+<p>𝑀 = 𝐿 + 𝑆 total value in Market</p>
+<p>𝐸 a positive Exponent used to modify the slope of the curve</p>
+<p>𝜆 percentage offset for market (adjustable variable)</p>
+<p>Λ = 𝜆𝑀 offset scaled to market size</p>
+<p>𝑑 = 𝐿 − 𝑆 signed imbalance in market</p>
+<h4 id="532-equations">5.3.2 Equations。</h4>
+<p>Here are the unscaled rewards (alphaFLT per second) for the long &#x26; short side as functions of 𝑑：</p>
+<p>$$
+R <em>{L} (d)=\left{\begin {array} {ll}
+1 &#x26; ：d+\Lambda \leq-M \
+R</em> {-} (d) &#x26; ：0&#x3C;d+\Lambda&#x3C;M \
+1-R_ {+} (d) &#x26; :-M \leq d+\Lambda \leq 0 \
+0 &#x26; ：M&#x3C;d+\Lambda
+\end {array}\right。
+$$</p>
+<p>$$
+𝑅_𝑆 (𝑑) = 1 − 𝑅_𝐿(𝑑)
+$$</p>
+<p>where</p>
+<p>$$
+R_ {-} (d)=\frac {1} {2}\left(1-\frac {d+\Lambda} {M}\right)^{E}
+$$</p>
+<p>$$
+R_ {+} (d)=\frac {1} {2}\left(1+\frac {d+\Lambda} {M}\right)^{E}
+$$</p>
+<p>Note that the domains of 𝑅𝐿 and 𝑅𝑆 are both <code>𝐷 = {𝑑 ∈ R : −𝑀 ≤ 𝑑 &#x3C; 𝑀}</code> since <code>𝑑 = 𝐿 − 𝑆 = 𝑀 − 2𝑆</code> and 𝑆 has a range of (0，𝑀] (the reason 0 is not included is outside the scope of this derivation)。</p>
+<p>Also note that 𝑅𝐿 and 𝑅𝑆 are percentages i.e. <code>𝑅𝐿 (𝐷) ⊆ [0, 1] </code></p>
+<h4 id="533-derivation">5.3.3 Derivation。</h4>
+<p>Requirements for the 2 curves 𝑅𝐿 and 𝑅𝑆：</p>
+<ul>
+<li>(1) Both must have a value of 1 2 when 𝐿 = 𝑆 (equal issuance for a balanced market)</li>
+<li>(2) Both must be continuous for all values of 𝐿 &#x26; 𝑆</li>
+<li>(3) 𝑅𝐿 +𝑅𝑆 = 1 ∀ 𝐿，𝑆 (we don’t want any alphaFLT to be wasted)</li>
+<li>(4) 𝑅𝐿 increases (with) when 𝐿 decreases and vice-versa for 𝑅𝑆</li>
+<li>(5) Both must have an adjustable intensity；higher intensity meaning that，around the point where 𝐿 = 𝑆，𝑅𝐿 increases faster as 𝐿 decreases，and vice-versa for 𝑅𝑆 i.e. alphaFLT rewards quickly shift toward the underbalanced side as a market becomes imbalanced</li>
+<li>(6) 𝑅𝐿 &#x26; 𝑅𝑆 are both ≥ 0 (we can’t have negative alphaFLT issuance)</li>
+</ul>
+<p>One way of finding curves that fit is by starting with a = 𝑈 𝑀 where 𝑈 is the value of the underbalanced side i.e.</p>
+<p>$$
+U =\left{\begin {array} {ll}
+L &#x26; ：L \leq S \
+S &#x26; ：S&#x3C;L \
+\end {array}\right。
+$$</p>
+<p><strong>Consider the case where</strong> 𝑈 = 𝐿</p>
+<p>If we make 𝑅𝑂 ∝ a (where 𝑂 is the value of the overbalanced side，in this case 𝑂 = 𝑆) then #4 of our requirements is half-satisfied i.e. satisfied just for 𝐿。In fact，if we make 𝑅𝑂 ∝ a 𝐸 then #4 of our requirements is still half-satisfied as long as 𝐸 ∈ N，and we now have #5 half-satisfied。Let</p>
+<p>$$
+𝑅_𝑂(a) = a^𝐸
+$$</p>
+<p>Obviously #2 &#x26; #6 are half-satisfied for all 𝐿 ≤ 𝑆，and we can half-satisfy #1 by adjusting the equation to</p>
+<p>$$
+R_ {O} (a)=\frac {1} {2} (2 a)^{E}
+$$</p>
+<p>since</p>
+<p>$$
+a=\frac {1} {2} \Longleftrightarrow U=\frac {M} {2} \Longleftrightarrow L=S
+$$</p>
+<p>and</p>
+<p>$$
+1^{E}=1 \forall E \Longrightarrow \frac {1} {2} 1^{E}=\frac {1} {2}
+$$</p>
+<p>Finally，if we set 𝑅𝑈 (a) = 1 − 𝑅𝑂 (a) then #3 is satisfied for all 𝐿 ≤ 𝑆。Also，it follows that #1， #2， #4 &#x26; #5 are now wholly satisfied for all 𝐿 ≤ 𝑆。</p>
+<p><strong>Consider the case where</strong> 𝑈 = 𝑆</p>
+<p>Similarly，we have 𝑅𝑂 &#x26; 𝑅𝑈 that satisfy #1-6 for all 𝑆 &#x3C; 𝐿。So now all conditions are fully satisfied。</p>
+<p><strong>Turn</strong> 𝑅𝑂 &#x26; 𝑅𝑈 <strong>into</strong> 𝑅𝐿 &#x26; 𝑅𝑆</p>
+<p>Start with：</p>
+<p>$$
+R _{O}=\left{\begin {array} {ll}
+\frac {1} {2}\left (\frac {2 L} {M}\right)^{E} &#x26; ：L \leq S \
+\frac {1} {2}\left (\frac {2 S} {M}\right)^{E} &#x26; ：L>S
+\end {array}\right。
+$$</p>
+<p>and use definitions of 𝑑 &#x26; 𝑀 to get</p>
+<p>$$
+2L = M+d \quad \text {and} \quad 2 S=M-d \
+\Longrightarrow R_ {O} (d)
+&#x26;=\left{\begin {array} {ll}
+\frac {1} {2}\left (\frac {M+d} {M}\right)^{E} &#x26; ：d \leq 0 \
+\frac {1} {2}\left (\frac {M-d} {M}\right)^{E} &#x26; ：d>0
+\end {array}\right.\
+&#x26;=\left{\begin {array} {ll}
+R <em>{+}^{\prime} (d) \quad：d \leq 0 \
+R</em> {-}^{\prime} (d) \quad：d>0
+\end {array}\right。
+$$</p>
+<p>where</p>
+<p>$$
+R_ {-}^{\prime} (d)=\frac {1} {2}\left(1-\frac {d} {M}\right)^{E}
+$$</p>
+<p>$$
+R_ {+}^{\prime} (d)=\frac {1} {2}\left(1+\frac {d} {M}\right)^{E}
+$$</p>
+<p>Also，</p>
+<p>$$
+R <em>{U} (d)=\left{\begin {array} {ll}
+1-R</em> {+}^{\prime} (d) &#x26; ：d \leq 0 \
+1-R _{-}^{\prime} (d) &#x26; ：d>0
+\end {array}\right。
+$$</p>
+<p>Now，</p>
+<p>$$
+\begin {aligned}
+R_ {L} &#x26;=\left{\begin {array} {ll}
+R <em>{U} &#x26; ：L \leq S \
+R</em> {O} &#x26; ：L>S
+\end {array}\right.\
+\Longrightarrow R <em>{L} (d) &#x26;=\left{\begin {array} {ll}
+1-R</em> {+} (d) &#x26; ：d \leq 0 \
+R _{-} (d) &#x26; ：d>0
+\end {array}\right。
+\end {aligned}
+$$</p>
+<p>and</p>
+<p>$$
+\begin {aligned}
+R_ {S} &#x26;=\left{\begin {array} {ll}
+R <em>{O} \quad：L \leq S \
+R</em> {U} \quad：L>S
+\end {array}\right.\
+\Longrightarrow R <em>{S} (d) &#x26;=\left{\begin {array} {ll}
+R</em> {+}^{\prime} (d) &#x26; ：d \leq 0 \
+1-R <em>{-}^{\prime} (d) &#x26; ：d>0
+\end {array}\right.\
+\Longrightarrow R</em> {S} (d) &#x26;=1-R_ {L} (d)
+\end {aligned}
+$$</p>
+<p>All the conditions are satisfied for 𝑅𝐿 &#x26; 𝑅𝑆 since they are satisfied for 𝑅𝑈 &#x26; 𝑅𝑂，as long as −𝑀 ≤ 𝑑 ≤ 𝑀。There are now only 2 differences between these final equations and the original ones (1) &#x26; (2)：the variable Λ and the edge cases that it creates。</p>
+<p>The percentage offset 𝜆 was added so that if a market tends to always be skewed in a particular direction (e.g. market is stable when long side is 10% more than short side) then we can adjust the alphaFLT rewards to increase incentive for the market to stabilize around the 50/50 (long/short) mark instead。(50/50 markets are preferred because the exposure for both sides is 1。) The percentage offset has to be scaled to the market size in order to give the desired impact，so Λ is added to the equations。Due to the offset 2 new cases were added to the piecewise function to keep condition #4 &#x26; #6 satisfied。</p>
+<h3 id="54-theory-adjusted-to-solidity-code">5.4 Theory adjusted to Solidity code</h3>
+<p>𝑅− &#x26; 𝑅+ are both adjusted like so：</p>
+<p>$$
+R_ {-} (d)=\frac {1} {2}\left(1+\frac {d+\Lambda} {M}\right)^{E}=\frac {1} {2} \frac {\left[2\left(S-\frac {\Lambda} {2}\right)\right]^{E}} {M^{E}}
+$$</p>
+<p>$$
+R_ {+} (d)=\frac {1} {2}\left(1-\frac {d+\Lambda} {M}\right)^{E}=\frac {1} {2} \frac {\left[2\left(L+\frac {\Lambda} {2}\right)\right]^{E}} {M^{E}}
+$$</p>
+<p>Problem - in the EVM the maximum integer size is 2 256 - so if 𝑀𝐸 > 2 256 we have an overflow。We can prevent this issue by dividing both the numerator and the denominator in the above equations by the same amount before raising them to the power 𝐸。Note we loose precision due to integer division。Let</p>
+<p><code>a = divisorToPreventIntegerOverflowOnExponentiation</code></p>
+<p>then</p>
+<p>$$
+R_ {-} (d)=\frac {1} {2} \frac {\left[\frac {2\left(s-\frac {\Lambda} {2}\right)} {\alpha}\right]^{E}} {\left (\frac {M} {\alpha}\right)^{E}}
+$$</p>
+<p>$$
+R_ {+} (d)=\frac {1} {2} \frac {\left[\frac {2\left(L+\frac {\Lambda} {2}\right)} {\alpha}\right]^{E}} {\left (\frac {M} {\alpha}\right)^{E}}
+$$</p>
+<p>How can we optimise this for solidity？We can use bitshifting rather than division，as long as we keep a a power of 2。Bitshifting left by 5 is the same as dividing by 2 5。</p>
+<h2 id="6-alphaflt-tokens">6 ALPHAFLT TOKENS</h2>
+<p>Please refer to label 5 in Figure 1 for this section。</p>
+<h3 id="61-summary">6.1 Summary</h3>
+<p>alphaFLT tokens accrued can be burnt in exchange for either the alpha protocol revenues or FLT tokens upon the release of the Float v1 system。The strategic move allows not only the core protocol mechanics to iterate without legacy，but the tokenomics of the system to also improve in the coming release。</p>
+<h3 id="62-motivation">6.2 Motivation</h3>
+<p>The motivation for releasing alphaFLT is the power a two token model affords rapid iteration。When engineering such a revolutionary and complex protocol such as Float，tokenomics are another massive component that warrants meticulous research to ensure long term success of the protocol。Given our interest in deploying the alpha for incentive testing and user insight，the alphaFLT is an opportunity to not be pigeon holed into a legacy tokenomic design that may not be suited for the protocol。</p>
+<p>alphaFLT is well thought out v0 tokenomic system that stands to greatly benefit Float early adopters though alpha treasury revenue and favourable conversion into FLT tokens upon the next system release。</p>
+<h2 id="7-other">7 OTHER</h2>
+<h3 id="71-float-capital-alpha-audit">7.1 Float Capital Alpha Audit</h3>
+<p>Float Capital ran a $50 000 smart contract audit competition where ethereum security experts competed to find vulnerabilities in the float alpha system。The results of the competition can be found here。</p>
+<p>It is very important that you understand an audit does not equate to risk free。Many risks are present in the Float Capital alpha system and users should do their own due diligence before minting a synthetic asset。This blog post describes the risks in more detail。</p>
+<h3 id="72-gems">7.2 GEMS</h3>
+<p>Users who interact with the float capital protocol can receive 250 GEMS per day。These are currently non-transferable ERC20 tokens。The tokens entitle users to special discord permissions，special NFTs，and early release access to name just a few。</p>
+<h3 id="73-discounts">7.3 Discounts</h3>
+<p>Float Capital is pioneering cross protocol partnerships and utility。A flexible fee discount model allows users with certain NFTs to have protocol fee discounts。Initial partnerships with NFT protocols Rumble Kong League ($40m total value) and Wildcards ($200k raised for animal conservation) are just the tip of the iceberg in this innovation。</p>
+<h3 id="74-shifting">7.4 Shifting</h3>
+<p>Float Capital is first synthetic asset protocol (that we are aware of) providing the ability to natively shift synth positions (staked or not) between long and short。</p>
+<p>This allows efficient building of delta neutral liquidity vaults，key to scaling to mass market liquidity。</p>
+<h3 id="75-governance">7.5 Governance</h3>
+<p>Float Capital is a community governed protocol that currently relies on pseudo discord role base governance，where roles are awarded to users based on GEMS collected。In the future，Float Capital will move toward becoming a DAO。</p>
+<h3 id="76-alpha-live-performance">7.6 Alpha Live performance</h3>
+<p>Since the live alpha has commenced，more than $250 000 has been organically deposited into float to mint synthetic assets，making cheap and fast synth exposure a reality。The goal of the alpha will be to continue adding more synthetic assets and testing current incentive parameters。These learning’s will be integral for future protocol iterations。</p>
+<h3 id="77-float-v1">7.7 Float v1</h3>
+<p>The subsequent release following the float alpha is going be informed by the insights from the alpha。The key to the design will be ensuring sustained and efficient protocol liquidity。</p> </div> <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row"> <ul class="mr-5 rtl:mr-0 rtl:ml-5"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/EVM" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">EVM</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/项目" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">项目</a></li></ul> <div class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600"> <span class="align-super font-bold text-gray-400 dark:text-slate-400">Share:</span> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Twitter Share" data-aw-social-share="twitter" data-aw-url="https://dataagg.github.io/floatcapital" data-aw-text="Float Capital"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-x">   <use  xlink:href="#ai:tabler:brand-x"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Facebook Share" data-aw-social-share="facebook" data-aw-url="https://dataagg.github.io/floatcapital"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-facebook">  <symbol id="ai:tabler:brand-facebook"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z"/></symbol> <use  xlink:href="#ai:tabler:brand-facebook"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Linkedin Share" data-aw-social-share="linkedin" data-aw-url="https://dataagg.github.io/floatcapital" data-aw-text="Float Capital"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-linkedin">  <symbol id="ai:tabler:brand-linkedin"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm4 5v5m0-8v.01M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></g></symbol> <use  xlink:href="#ai:tabler:brand-linkedin"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Whatsapp Share" data-aw-social-share="whatsapp" data-aw-url="https://dataagg.github.io/floatcapital" data-aw-text="Float Capital"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-whatsapp">  <symbol id="ai:tabler:brand-whatsapp"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></g></symbol> <use  xlink:href="#ai:tabler:brand-whatsapp"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Email Share" data-aw-social-share="mail" data-aw-url="https://dataagg.github.io/floatcapital" data-aw-text="Float Capital"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol> <use  xlink:href="#ai:tabler:mail"></use> </svg> </button> </div> </div> </article> </section> <div class="mx-auto px-6 sm:px-6 max-w-3xl pt-8 md:pt-4 pb-12 md:pb-20"> <a class="btn btn-tertiary px-3 md:px-3" href="/blog"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" data-icon="tabler:chevron-left">  <symbol id="ai:tabler:chevron-left"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"/></symbol> <use  xlink:href="#ai:tabler:chevron-left"></use> </svg> Back to Blog
+</a> </div>  </main>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12"> <div class="col-span-12 lg:col-span-4"> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/">TokenAgg DAO</a> </div> <div class="text-sm text-muted"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="/terms">通用条款</a><a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="/privacy">隐私协议</a> </div> </div> <div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">项目</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/project/index.html?id=001"> TokenAgg DAO </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/project/index.html?id=012"> DApp Admin </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">解决方案</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution1"> 生鲜配送 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution2"> 诊所联盟 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution3"> 妙蛙云池 </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">公司</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/teams"> 关于我们 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/intro"> 公司价值 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/story"> 成功案例 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/privacy"> 隐私条款 </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">博客</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/category/项目推荐"> 项目推荐 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/category/基础知识"> 基础知识 </a> </li> </ul> </div> </div> <div class="md:flex md:items-center md:justify-between py-6 md:py-8"> <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="X" href="https://twitter.com/watano"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol> <use  xlink:href="#ai:tabler:brand-x"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">   <use  xlink:href="#ai:tabler:rss"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Github" href="https://github.com/dataagg"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol> <use  xlink:href="#ai:tabler:brand-github"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Mirror" href="https://mirror.xyz/0x94c0e8cf59e644fa76d4fa83164b9f2030d07f31">  <img src="/imgs/icon-mirror.png" class="w-5 h-5" alt="">  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://github.com/dataagg"> DataAgg</a> · All rights reserved.   </div> </div> </div> </footer>   <script>(function(){const defaultTheme = "dark";
+
+  if (window.basic_script) {
+    return;
+  }
+
+  window.basic_script = true;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+
+  const initTheme = function () {
+    if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+      applyTheme(defaultTheme.replace(':only', ''));
+    } else if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  };
+  initTheme();
+
+  function attachEvent(selector, event, fn) {
+    const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.addEventListener(event, (e) => fn(e, elem), false);
+      });
+    }
+  }
+
+  const onLoad = function () {
+    let lastKnownScrollPosition = window.scrollY;
+    let ticking = true;
+
+    attachEvent('#header nav', 'click', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
+      elem.classList.toggle('expanded');
+      document.body.classList.toggle('overflow-hidden');
+      document.getElementById('header')?.classList.toggle('h-screen');
+      document.getElementById('header')?.classList.toggle('expanded');
+      document.getElementById('header')?.classList.toggle('bg-page');
+      document.querySelector('#header nav')?.classList.toggle('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
+      if (defaultTheme.endsWith(':only')) {
+        return;
+      }
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
+      const network = elem.getAttribute('data-aw-social-share');
+      const url = encodeURIComponent(elem.getAttribute('data-aw-url'));
+      const text = encodeURIComponent(elem.getAttribute('data-aw-text'));
+
+      let href;
+      switch (network) {
+        case 'facebook':
+          href = `https://www.facebook.com/sharer.php?u=${url}`;
+          break;
+        case 'twitter':
+          href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+          break;
+        case 'linkedin':
+          href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+          break;
+        case 'whatsapp':
+          href = `https://wa.me/?text=${text}%20${url}`;
+          break;
+        case 'mail':
+          href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;
+          break;
+
+        default:
+          return;
+      }
+
+      const newlink = document.createElement('a');
+      newlink.target = '_blank';
+      newlink.href = href;
+      newlink.click();
+    });
+
+    function appyHeaderStylesOnScroll() {
+      const header = document.querySelector('#header[data-aw-sticky-header]');
+      if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
+        document.getElementById('header').classList.add('scroll');
+      } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+        document.getElementById('header').classList.remove('scroll');
+      }
+      ticking = false;
+    }
+    appyHeaderStylesOnScroll();
+
+    attachEvent([document], 'scroll', function () {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          appyHeaderStylesOnScroll();
+        });
+        ticking = true;
+      }
+    });
+  };
+  const onPageShow = function () {
+    document.documentElement.classList.add('motion-safe:scroll-smooth');
+    const elem = document.querySelector('[data-aw-toggle-menu]');
+    if (elem) {
+      elem.classList.remove('expanded');
+    }
+    document.body.classList.remove('overflow-hidden');
+    document.getElementById('header')?.classList.remove('h-screen');
+    document.getElementById('header')?.classList.remove('expanded');
+    document.querySelector('#header nav')?.classList.add('hidden');
+  };
+
+  window.onload = onLoad;
+  window.onpageshow = onPageShow;
+
+  document.addEventListener('astro:after-swap', () => {
+    initTheme();
+    onLoad();
+    onPageShow();
+  });
+})();</script>  </body> </html>

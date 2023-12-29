@@ -1,5 +1,3 @@
-# TokenAgg DAO
-
 ## 一、平台简介
 
 ​		社区自治的区块链项目综合服务平台
@@ -9,10 +7,10 @@
 ### 1. 亮点
 
 |**🧙一站式服务**|**👨‍👩‍👧‍👦终身成就展示**|**🚀Netflix式的DAO**|
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 一站式综合服务平台，包含项目众筹、产品研发、市场运营、金融衍生品等等。只要是需要的服务，总有专业的人员为您服务；但恶意服务也会被社群集体“封杀”。项目方、贡献者与平台共同成长、相互成就。| 在个人隐私保护前提下，平台生态建设者们的所有工作成果都在链上记录，展示个人的高光时刻。项目工作贡献不仅仅获得酬劳，还有终身成就的社区认可。优秀生态建设者将获得更多优质机会，强者越强。 | 完全社群自治，所有生态建设者共同决策。低门槛让所有人都能发表自己的观点，实验自己的想法。所有决策都上链公开透明。Netflix的企业文化是最适合区块链的DAO治理模式。 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| 一站式综合服务平台，包含项目众筹、产品研发、市场运营、金融衍生品等等。<br>只要是需要的服务，总有专业的人员为您服务；但恶意服务也会被社群集体“封杀”。<br>项目方、贡献者与平台共同成长、相互成就。| 在个人隐私保护前提下，平台生态建设者们的所有工作成果都在链上记录，展示个人的高光时刻。<br>项目工作贡献不仅仅获得酬劳，还有终身成就的社区认可。<br>优秀生态建设者将获得更多优质机会，强者越强。 | 完全社群自治，所有生态建设者共同决策。<br>低门槛让所有人都能发表自己的观点，实验自己的想法。<br>所有决策都上链公开透明。<br>Netflix的企业文化是最适合区块链的DAO治理模式。 |
 |**💡你的数据**|**⚡️全链支持**|**🧭开源，开放，自我构建**|
-| 整合现有成熟技术，尽可能保证去中心化运作。用户数据都在链上，随时可以换个“管家”管理你的数据，让数据为你赋能。 | 使用ZetaChain支持跨链消息、跨链交易、跨链计数及跨链NFT等功能。实现项目方的全链智能合约及DeFi业务需求。为所有项目方提供跨链流动池金库支撑。 | 所有代码开源，且使用商业友好的MIT许可协议，任何团队都可以fork出不同行业的项目孵化平台。“吃自己的狗粮！” 1号项目就是TADAO，她是所有项目的参考模板。 |
+| 整合现有成熟技术，尽可能保证去中心化运作。<br>用户数据都在链上，随时可以换个“管家”管理你的数据，让数据为你赋能。 | 使用ZetaChain支持跨链消息、跨链交易、跨链计数及跨链NFT等功能。<br>实现项目方的全链智能合约及DeFi业务需求。<br>为所有项目方提供跨链流动池金库支撑。 | 所有代码开源，且使用商业友好的MIT许可协议，任何团队都可以fork出不同行业的项目孵化平台。<br>“吃自己的狗粮！” 1号项目就是TADAO，她是所有项目的参考模板。 |
 
 ### 2. 目标
 
@@ -207,56 +205,9 @@
   + 平台的“后台服务端”，包含了平台的综合服务计算任务。主要用于链上数据的索引及预处理，加速平台应用的响应效率。
   + 平台研发第1阶段时临时使用Nestjs + MYSql数据的中心化方式实现，之后逐步转换为IPFS，Tableland及Github Actions等方式替代，部分功能直接在前端页面或App端实现。逐步替代整个TAserver端，移除平台对中心化服务器的依赖。
 
-```mermaid
-flowchart LR
-          Platform(平台) -->|发起提案| govern{平台治理}
-          Platform --> Achievement((声誉成就))
-          govern -->|创建社区组织| Team(社区组织)
-          govern -->|认可项目成就| Achievement
-          Platform -->|创建平台金库| PlatformTreasury[(平台金库)]
-          govern -->|全员持股ESOP| User
-          govern -->|管理| PlatformTreasury
-          User(参与者) -->|认证关联主钱包| Platform
-          User -->|从属| Team
-          Team -->|管理| TeamTreasury[(社区金库)]
-          governTeam -->|发起项目| Project(项目)
-          Project -->|项目专项资金| TeamTreasury
-          Team -->|发起提案| governTeam{社区治理}
-          Project -->|发起提案| governProject{项目治理}
-          User -->|参与项目| Project
-          governProject -->|更新项目进度| TeamTreasury
-          governProject -->|释放项目结算代币| User
-          governProject -->|释放项目成就| User
-          TeamTreasury -->|释放项目结算代币| User
-          User -->|成就点数兑换| Achievement
-          Achievement -->|发放稀有NFT徽章| User
-          User -->|提现项目结算代币| TeamTreasury
-          StockHolder(股东) -->|投资| PlatformTreasury
-          User -->|出售个人股份| PlatformTreasury
+<img src="/imgs/project/p000-001.svg" alt=""/>
 
-          subgraph 平台治理
-            Platform
-            PlatformTreasury
-            User
-            govern
-            Achievement
-            StockHolder
-          end
-          subgraph 社区治理
-            Team
-            TeamTreasury
-            governTeam
-          end
-          subgraph 项目管理
-            Project
-            governProject
-          end
-
-          style Platform fill:#bbf,stroke:#333,stroke-width:2px
-          style PlatformTreasury fill:#f96,stroke:#333,stroke-width:2px
-          style TeamTreasury fill:#f96,stroke:#333,stroke-width:2px
-          style govern fill:#FFF4DD,stroke:#EEDDBB,stroke-width:2px
-          style governTeam fill:#FFF4DD,stroke:#EEDDBB,stroke-width:2px
-          style governProject fill:#FFF4DD,stroke:#EEDDBB,stroke-width:2px
-```
-
+## 四、开发周期与成本预算
+  + 此计划只是按照目前已了解的功能需求进行评估计划的，如果实施过程中增加大型功能模块开发或改造，整体时间进度需要及时调整
+  + **平台开发第1阶段**基本都是基于多年经验与现有项目成果进行重构，思路相对清晰，目标明确，所以第一阶段的研发内容较为详细；起始开发部分不需要外部协助，先搭建基础框架后再正式对外合伙人招募，启动后续开发工作；
+  + **平台开发第2阶段**很多内容都属于初步设计阶段，所以其工作计划相对粗糙，后期将根据实际的市场与社区反馈进行调整、详细设计规划。

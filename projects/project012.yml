@@ -1,0 +1,354 @@
+title: DAppAdmin开发计划
+unit: 'USDT'
+vault: 5000
+symbol1: 'USDT'
+symbol2: 'USDT'
+manTypes:
+  teamLeader: 800
+  designer: 650
+  webDeveloper: 600
+  serverDeveloper: 550
+  contractDeveloper: 700
+  tester: 350
+  maintenanceEngineer: 300
+  writer: 200
+  trainer: 300
+  marketer: 400
+sectionsBudgets: [300000, 300000]
+sections:
+- title: '基础功能开发'
+  category: '1期开发'
+  start: "2023-11-01T00:00:00.000Z"
+  end: "2024-03-02T00:00:00.000Z"
+  description: 基础框架搭建，实现客户记录分析归集，商品销售
+  tasks:
+  - id: t101
+    task: 需求分析讨论, 2023-11-01, 3d
+    costs:
+      teamLeader: [1, 3]
+      marketer: [1, 3]
+    status: finished
+    category: 需求分析
+    description: 组织核心团队进行头脑风暴，收集整理平台的核心需求
+  - id: t102
+    task: 功能详细设计, after t101, 10d
+    costs:
+      teamLeader: [1, 10]
+      marketer: [1, 2]
+      webDeveloper: [1, 2]
+      serverDeveloper: [1, 2]
+      tester: [1, 1]
+    status: finished
+    category: 详细设计
+    description: 根据需求分析结果,设计平台的功能模块, 业务流程及业务对象关系
+  - id: t103
+    task: 制定开发计划, after t102, 1d
+    costs:
+      teamLeader: [1, 1]
+      webDeveloper: [2, 1]
+      serverDeveloper: [2, 1]
+    status: finished
+    category: 详细设计
+    description: 针对需求设计及现有资源，与团队成员沟通协调，详细设计安排开发计划
+  - id: t104
+    task: 详细设计说明, after t103, 2d
+    costs:
+      teamLeader: [1, 2]
+      marketer: [1, 2]
+      webDeveloper: [2, 2]
+      serverDeveloper: [2, 2]
+      tester: [2, 2]
+      trainer: [2, 3]
+      writer: [1, 3]
+    status: finished
+    category: 详细设计
+    description: 对所有设计、开发、测试人员讲解功能模块详细设计
+  - id: t105
+    task: 网站UI设计, after t104, 2d
+    costs:
+      designer: [1, 2]
+      webDeveloper: [2, 2]
+    status: finished
+    category: 详细设计
+    description: UI设计师按照详细功能文档设计前端界面进行美化设计，准备相关UI素材
+  - id: t130
+    task: 春节放假，review功能模块, 2024-02-09, 10d
+    costs:
+      teamLeader: [1, 10]
+    category: 详细设计
+    description: 春节放假，所有工作暂停，项目经理review相关功能模块实现
+  - id: t106
+    task: 创建DAppAdmin平台项目仓库, after t104, 5d
+    costs:
+      teamLeader: [1, 5]
+      serverDeveloper: [1, 5]
+      webDeveloper: [1, 5]
+    status: finished
+    category: commons
+    description: 搭建DAppAdmin平台开发的基础框架，包含commons，sevice，server，admin，website等模块
+  - id: t113
+    task: 开源平台项目仓库到Github, after t112, 5d
+    costs:
+      teamLeader: [1, 5]
+      serverDeveloper: [1, 5]
+      webDeveloper: [1, 5]
+    # status: finished
+    category: commons
+    description: review已有代码库，移除所有敏感部分代码，全新提交到Github，全员切换到Github仓库
+  - id: t121
+    task: bug修复与功能完善1, after t130, 20d
+    costs:
+      teamLeader: [1, 10]
+      webDeveloper: [2, 10]
+      serverDeveloper: [2, 10]
+    category: commons
+    description: bug修复及功能细节完善
+  - id: t107
+    task: 升级完善TokenAgg官网, after t105, 10d
+    costs:
+      teamLeader: [1, 10]
+      webDeveloper: [1, 10]
+    status: working
+    category: website
+    description: 使用Astro框架重构原TokenAgg官网，更新文章及相关工具
+  - id: t126
+    task: 实现引流的工具, after t107, 30d
+    costs:
+      teamLeader: [1, 5]
+      marketer: [1, 5]
+      webDeveloper: [2, 5]
+      serverDeveloper: [2, 5]
+      tester: [2, 5]
+    category: website
+    description: 寻找当前市场热点，开发免费对外小工具，与第三方项目合作提供互推活动。
+  - id: t108
+    task: DAppAdmin基础功能原型开发, after t106, 15d
+    costs:
+      teamLeader: [1, 5]
+      webDeveloper: [2, 15]
+    status: finished
+    category: admin
+    description: 开发实现DAppAdmin基础功能的前端UI原型开发
+  - id: t111
+    task: 完善基础功能UI细节, after t109, 15d
+    costs:
+      teamLeader: [1, 5]
+      webDeveloper: [2, 15]
+    status: working
+    category: admin
+    description: 调整完善所有DAppAdmin的基础功能模块的UX
+  - id: t117
+    task: 实现客户管理模块, after t116, 10d
+    costs:
+      teamLeader: [1, 5]
+      webDeveloper: [2, 10]
+      serverDeveloper: [2, 5]
+    # status: working
+    category: tasks
+    description: 根据已有信息及客户数据，实现客户信息管理功能原型
+  - id: t109
+    task: server端对接实现基础功能API, after t108, 5d
+    costs:
+      teamLeader: [1, 2]
+      serverDeveloper: [2, 5]
+    status: working
+    category: server
+    description: 按照基础功能部分原型实现server端API
+  - id: t110
+    task: 集成EVM索引器定时任务, after t108, 15d
+    costs:
+      teamLeader: [1, 5]
+      serverDeveloper: [1, 15]
+    status: working
+    category: tasks
+    description: 使用subsquid EVM索引器完成ERC20代币的交易扫描入数据库
+  - id: t115
+    task: 实现EVM索引器任务调度功能, after t110, 10d
+    costs:
+      teamLeader: [1, 5]
+      serverDeveloper: [2, 10]
+    # status: working
+    category: tasks
+    description: 实现EVM索引器的分配调度算法及配置
+  - id: t112
+    task: 完善代码生成器及模板, after t109, 10d
+    costs:
+      teamLeader: [1, 10]
+      serverDeveloper: [2, 5]
+      webDeveloper: [2, 5]
+    status: working
+    category: tasks
+    description: 根据基础功能的代码，完成代码生成器相关模板改造
+  - id: t116
+    task: 实现第三方平台地址数据导入, after t112, 10d
+    costs:
+      teamLeader: [1, 5]
+      serverDeveloper: [1, 10]
+    # status: working
+    category: tasks
+    description: 实现TokenPocket的ERC20代币信息数据、Debank的大户地址导入
+  - id: t120
+    task: 平台正式上线, 2024-03-01, 1d
+    costs:
+      teamLeader: [1, 1]
+      marketer: [1, 1]
+      webDeveloper: [2, 1]
+      serverDeveloper: [2, 1]
+      tester: [2, 1]
+      maintenanceEngineer: [1, 1]
+      trainer: [2, 1]
+      writer: [1, 1]
+    category: 平台运维
+    description: 系统正式上线发布运行
+  - id: t125
+    task: 线上营销推广互动, after t126, 40d
+    costs:
+      teamLeader: [1, 20]
+      marketer: [1, 70]
+      webDeveloper: [2, 10]
+      serverDeveloper: [2, 10]
+    category: 运营推广
+    description: 逐步开展市场运维工作，形成一套完善运营流程，定期开展推广活动
+- title: '金融衍生品集成'
+  category: '2期开发'
+  start: "2024-03-03T00:00:00.000Z"
+  end: "2024-07-30T00:00:00.000Z"
+  description: 平台金库，DeFi集成，奖池抽奖及营销机器人开发
+  tasks:
+  - id: t201
+    task: 2期需求分析讨论, 2024-03-03, 3d
+    costs:
+      teamLeader: [1, 3]
+      marketer: [1, 3]
+      webDeveloper: [1, 3]
+      serverDeveloper: [1, 3]
+      tester: [1, 3]
+      trainer: [1, 3]
+      writer: [1, 3]
+    category: 需求分析
+    description: 组织核心团队进行头脑风暴，收集整理平台2期业务需求
+  - id: t202
+    task: 功能详细设计2, after t201, 20d
+    costs:
+      teamLeader: [1, 20]
+      webDeveloper: [1, 10]
+      serverDeveloper: [1, 10]
+      marketer: [1, 5]
+    category: 详细设计
+    description: 详细设计2期功能模块
+  - id: t203
+    task: DeFi平台集成, after t202, 20d
+    costs:
+      teamLeader: [1, 15]
+      contractDeveloper: [1, 20]
+      webDeveloper: [2, 10]
+      serverDeveloper: [2, 10]
+    category: dapp
+    description: 集成第三方主流DeFi平台，为平台合作伙伴提供金融衍生品工具库
+  - id: t204
+    task: 实现平台金库, after t203, 30d
+    costs:
+      teamLeader: [1, 20]
+      marketer: [1, 2]
+      contractDeveloper: [1, 20]
+      webDeveloper: [2, 20]
+      serverDeveloper: [1, 10]
+    category: contract
+    description: 参考OlympusDAO的合约代码库，实现平台专属的平台金库功能
+  - id: t205
+    task: 集成奖池抽奖功能, after t204, 10d
+    costs:
+      teamLeader: [1, 5]
+      marketer: [1, 3]
+      contractDeveloper: [1, 10]
+      webDeveloper: [1, 5]
+      serverDeveloper: [1, 5]
+    category: contract
+    description: 参考PoolTogether项目库，定制改造一个平台专属的奖池抽奖合约
+  - id: t206
+    task: 企业专属定制功能开发, after t204, 20d
+    costs:
+      teamLeader: [1, 5]
+      marketer: [1, 3]
+      contractDeveloper: [1, 10]
+      webDeveloper: [2, 20]
+      serverDeveloper: [1, 20]
+    category: 定制开发
+    description: 为合作伙伴增加专属的定制功能
+  - id: t207
+    task: 实现AI营销bot, after t202, 40d
+    costs:
+      teamLeader: [1, 5]
+      marketer: [1, 3]
+      webDeveloper: [2, 30]
+      serverDeveloper: [1, 15]
+    category: bot
+    description: 使用AI实现一个营销Bot，完成一些可重复的营销推广工作，建立日常营销标准工作流程
+  - id: t220
+    task: bug修复与功能完善2, after t206, 15d
+    costs:
+      teamLeader: [1, 5]
+      webDeveloper: [1, 5]
+      serverDeveloper: [1, 10]
+      maintenanceEngineer: [1, 5]
+    category: 功能开发
+    description: 系统前后端集成开发,联调相关业务功能模块，完善系统功能细节,修复bug
+  - id: t208
+    task: 更新部署, after t206, 3d
+    costs:
+      teamLeader: [1, 3]
+      tester: [1, 1]
+      contractDeveloper: [1, 1]
+      maintenanceEngineer: [1, 1]
+    category: 平台运维
+    description: 完成系统的升级部署及主网合约部署
+  - id: t210
+    task: 业务协助处理及业务功能完善, after t206, 5d
+    costs:
+      teamLeader: [1, 5]
+      marketer: [1, 3]
+      webDeveloper: [1, 5]
+      serverDeveloper: [1, 5]
+    category: 平台运维
+    description: 平台开发人员协助合作伙伴处理实际业务操作失误。根据实际业务需求,完善平台功能与bug修复
+  - id: t211
+    task: 平台运营推广2期, 2024-06-01, 42d
+    costs:
+      teamLeader: [1, 3]
+      marketer: [1, 20]
+      trainer: [1, 10]
+    category: 运营推广
+    description: 提供平台的线上运营推广, 平均1-2次/周
+feeCategories:
+  外部采购:
+  - title: 注册认证
+    specification: 域名、SSL证书及其他平台认证
+    quantity: 1
+    price: 2000
+    description: 3年
+  - title: 云服务器租赁
+    specification: 云服务器租赁, 1台主服务器+2台从服务器+1台备份/部署服务器
+    quantity: 1
+    price: 20000
+    description: 1年
+  - title: 第三方服务租用
+    specification: 相关第三方服务(CDN、邮件服务、短信网关、机器人识别等)的租用
+    quantity: 1
+    price: 8000
+    description: 1年
+  平台服务:
+  - title: 平台运维
+    specification: 定期对平台进行运维工作，保证平台正常运作
+    quantity: 1
+    price: 10000
+    description: 1人1年
+  - title: 技术支持
+    specification: 平台技术支持, 24小时*7天
+    quantity: 1
+    price: 20000
+    description: 1人1年
+  - title: 平台运营推广
+    specification: 平台新闻资讯编辑发布, 1-2次/周
+    quantity: 1
+    price: 20000
+    description: 1人1年

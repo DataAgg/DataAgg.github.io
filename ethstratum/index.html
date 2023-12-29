@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="en" dir="ltr" class="2xl:text-[20px]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="sitemap" href="/sitemap-index.xml"><link rel="shortcut icon" href="/_astro/favicon.sNBBSGPZ.ico"><link rel="icon" type="image/svg+xml" href="/_astro/favicon.jAUM_1GV.svg"><link rel="mask-icon" href="/_astro/favicon.jAUM_1GV.svg" color="#8D46E7"><link rel="apple-touch-icon" sizes="180x180" href="/_astro/apple-touch-icon.qzCMJsat.png"><style is:global>
+  :root {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+    --aw-color-primary: #6966ff;
+    --aw-color-secondary: #3ed9a4;
+    --aw-color-accent: #e45555;
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: #181818;
+    --aw-color-text-muted: rgb(0x18 0x18 0x18 / 66%);
+    --aw-color-bg-page: #ffffff;
+    --aw-color-bg-page-dark: #ffffff;
+    --aw-color-layer1: #ffffff;
+    --aw-color-layer2: #e9ecee;
+    --aw-color-layer3: #ffffff;
+    --aw-color-layer4: #f7f8fa;
+    --aw-color-layer5: #ffffff;
+    --aw-color-layer6: #edf0f2;
+    --aw-color-layer7: #d5dadf;
+    --aw-color-layer8: #ffffff;
+
+    ::selection {
+      background-color: lavender;
+    }
+  }
+
+  .dark {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+    --aw-color-primary: #6966ff;
+    --aw-color-secondary: #3ed9a4;
+    --aw-color-accent: #e45555;
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: #fafafa;
+    --aw-color-text-muted: rgb(0xfa 0xfa 0xfa / 66%);
+    --aw-color-bg-page: #000000;
+    --aw-color-bg-page-dark: #000000;
+    --aw-color-layer1: #000000;
+    --aw-color-layer2: #18181b;
+    --aw-color-layer3: #0c0c0d;
+    --aw-color-layer4: #212124;
+    --aw-color-layer5: #303033;
+    --aw-color-layer6: #3b3b3f;
+    --aw-color-layer7: #494950;
+    --aw-color-layer8: #56565c;
+
+    ::selection {
+      background-color: #181825;
+      color: snow;
+    }
+  }
+</style><script>(function(){const defaultTheme = "dark";
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');
+
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.checked = theme !== 'dark';
+      });
+    }
+  }
+
+  if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+    applyTheme(defaultTheme.replace(':only', ''));
+  } else if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+})();</script><title>以太坊stratum协议原理 — TokenAgg DAO</title>
+<meta name="description" content="以太坊stratum协议原理" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://dataagg.github.io/ethstratum" />
+<meta property="og:title" content="以太坊stratum协议原理" />
+<meta property="og:description" content="以太坊stratum协议原理" />
+<meta property="og:url" content="https://dataagg.github.io/ethstratum" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://dataagg.github.io/imgs/colors.jpg" />
+
+<meta property="og:locale" content="en" />
+<meta property="og:site_name" content="TokenAgg DAO" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@watano" />
+<meta name="twitter:creator" content="@watano" /><!-- Uncomment line below to activate View Transitions --><!-- <ViewTransitions fallback="swap" /> --><link rel="stylesheet" href="/_astro/click-through.45fq7QCF.css" /></head> <body class="antialiased text-default bg-page tracking-tight">   <header class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-aw-sticky-header id="header"> <div class="absolute inset-0"></div> <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl"> <div class="flex justify-between"> <a class="flex items-center" href="/"> <img src="/_astro/logo-long-dark.TphFalWY_Z1Yevjd.svg" id="toplogo" alt="TokenAgg DAO" width="199" height="64" loading="lazy" decoding="async"><script>(function(){const defaultTheme = "dark";
+
+  if (document.documentElement.classList.contains('dark')) {
+    document.getElementById('toplogo').src = '/imgs/logo-long-dark.svg';
+  } else {
+    document.getElementById('toplogo').src = '/imgs/logo-long-light.svg';
+  }
+})();</script> </a> <div class="flex items-center md:hidden"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> </div> <nav class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 项目  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">  <symbol id="ai:tabler:chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></symbol> <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/project/index.html?id=001"> TokenAgg DAO </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/project/index.html?id=012"> DApp Admin </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 解决方案  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution1"> 生鲜配送 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution2"> 诊所联盟 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution3"> 妙蛙云池 </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 公司  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/teams"> 关于我们 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/intro"> 公司价值 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/story"> 成功案例 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/privacy"> 隐私条款 </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 博客  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/项目推荐"> 项目推荐 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/基础知识"> 基础知识 </a> </li> </ul>  </li> </ul> </nav> <div class="hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0"> <div class="items-center flex justify-between w-full md:w-auto"> <div class="flex"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 md:inline-block" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol> <use  xlink:href="#ai:tabler:sun"></use> </svg></button> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS Feed" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">  <symbol id="ai:tabler:rss"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></symbol> <use  xlink:href="#ai:tabler:rss"></use> </svg> </a> </div> <span class="ml-4 rtl:ml-0 rtl:mr-4"> <a class="btn-secondary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" target="_blank" rel="noopener noreferrer" href="https://github.com/dataagg">Github</a> </span> </div> </div> </div> </header>  <main>  <section class="py-8 sm:py-16 lg:py-20 mx-auto"> <article> <header class=""> <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"> <p> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">  <symbol id="ai:tabler:clock"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 7v5l3 3"/></g></symbol> <use  xlink:href="#ai:tabler:clock"></use> </svg> <time datetime="Mon Aug 21 2017 08:00:00 GMT+0800 (香港标准时间)" class="inline-block">Aug 21, 2017</time>  
+· <a class="capitalize hover:underline inline-block" href="/category/基础知识"> 基础知识 </a>   · 5 min read </p> </div> <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> 以太坊stratum协议原理 </h1> <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"> 以太坊stratum协议原理 </p> <img src="/imgs/colors.jpg" width="900" height="506" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 506px; aspect-ratio: 1.7786561264822134; width: 100%;" class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700" alt="以太坊stratum协议原理" loading="eager" decoding="async"> </header> <div class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"> <h1 id="以太坊-stratum-协议原理">以太坊 stratum 协议原理</h1>
+<p>参照比特币的 <a href="http://www.8btc.com/stratum_protocol">stratum 协议</a>和 <a href="http://www.jianshu.com/p/7bfe925f3d0a">NiceHash 的 stratum 协议规范</a>编写了一版以太坊版本的 stratum 协议说明。</p>
+<hr>
+<p>stratum 协议是目前最常用的矿机和矿池之间的 TCP 通讯协议。</p>
+<h2 id="一挖矿的网络架构">一、挖矿的网络架构</h2>
+<p>以太坊是一个去中心化的网络架构，通过安装 Mist 客户端的节点来转发新交易和新区块。而矿机、矿池也同时形成了另一个网络，我们称之为矿工网络。</p>
+<p>矿工网络分成矿机、矿池、钱包等几个主要部分，有时矿池软件与钱包安装在一起，可合称为矿池。</p>
+<p>矿机与矿池软件之间的通讯协议是 <code>stratum</code>，而矿池软件与钱包之间的通讯是 <code>bitcoinrpc</code> 接口。</p>
+<p>stratum 是 <code>JSON</code> 为数据格式。</p>
+<h2 id="二stratum-协议">二、stratum 协议</h2>
+<h3 id="1任务订阅">1。任务订阅</h3>
+<p>矿机启动，首先以 <code>mining.subscribe</code> 方法向矿池连接，用来订阅工作。</p>
+<p>矿池以 <code>mining.notify</code> 返回订阅号、ExtraNonce1 和 ExtraNonce2_size。</p>
+<p>Client：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "method"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"mining.subscribe"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "params"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"MinerName/1.0.0"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"EthereumStratum/1.0.0"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Server：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "result"</span><span style="color:#E1E4E8">: [[</span><span style="color:#9ECBFF">"mining.notify"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"ae6812eb4cd7735a302a8a9dd95cf71f"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"EthereumStratum/1.0.0"</span><span style="color:#E1E4E8">], </span><span style="color:#9ECBFF">"080c"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#79B8FF">  "error"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">null</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>其中：</p>
+<p>ae6812eb4cd7735a302a8a9dd95cf71f 是 <code>订阅号</code>；</p>
+<p>080c 是 <code>extranonce</code>，Extranonce 可能最大 3 字节；</p>
+<h3 id="2矿机登录">2。矿机登录</h3>
+<p>矿机以 <code>mining.authorize</code> 方法，用某个帐号和密码登录到矿池，密码可空，矿池返回 <code>true</code> 登录成功。该方法必须是在初始化连接之后马上进行，否则矿机得不到矿池任务。</p>
+<p>Client：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">{ </span><span style="color:#79B8FF">"params"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"miner1"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"password"</span><span style="color:#E1E4E8">], </span><span style="color:#79B8FF">"id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">"method"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"mining.authorize"</span><span style="color:#E1E4E8"> }</span></span></code></pre>
+<p>Server：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">{ </span><span style="color:#79B8FF">"error"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">"id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">"result"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8"> }</span></span></code></pre>
+<h3 id="3难度调整">3。难度调整</h3>
+<p>难度调整由矿池下发给矿机，以 <code>mining.set_difficulty</code> 方法调整难度，<code>params</code> 中是难度值。Server：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">{ </span><span style="color:#79B8FF">"id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">"method"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"mining.set_difficulty"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">"params"</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">] }</span></span></code></pre>
+<p>矿机会在下一个任务时采用新难度，矿池有时会马上下发一个新任务并且把清理任务设为 true，以便矿机马上以新难度工作。</p>
+<h3 id="4任务分配">4。任务分配</h3>
+<p>该命令由矿池定期发给矿机，当矿机以 <code>mining.subscribe</code> 方法登记后，矿池应该马上以 <code>mining.notify</code> 返回该任务。</p>
+<p>Server：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "method"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"mining.notify"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "params"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">    "bf0488aa"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "abad8f99f3918bf903c6a909d9bbc0fdfa5a2f4b9cb1196175ec825c6610126c"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "645cf20198c2f3861e947d4f67e3ab63b7b2e24dcc9095bd9123e7b33371f6cc"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    true</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>任务 ID</strong>：<code>bf0488aa</code>；</p>
+<p><strong>seedhash</strong>：<code>abad8f99f3918bf903c6a909d9bbc0fdfa5a2f4b9cb1196175ec825c6610126c</code>。每一个任务都发送一个 seedhash 来支持尽可能多的矿池，这可能会很快地在货币之间交换。</p>
+<p><strong>headerhash</strong>：<code>645cf20198c2f3861e947d4f67e3ab63b7b2e24dcc9095bd9123e7b33371f6cc</code>。</p>
+<p>boolean <strong>cleanjobs</strong>：<code>true</code>。如果设为 true，那么矿工需要清理任务队列，并立即开始从事新提供的任务，因为所有旧的任务分享都将导致陈旧的分享错误。如果是 <code>false</code> 则等当前任务结束才开始新任务。</p>
+<h3 id="5结果提交">5。结果提交</h3>
+<p>矿工使用 seedhash 识别 DAG，然后带着 headerhash,extranonce 和自己的 minernonce 寻找低于目标的 share (这是由提供的难度而产生的)。</p>
+<p>矿机找到合法 share 时，就以”<code>mining.submit</code>“方法向矿池提交任务。矿池返回 true 即提交成功，如果失败则 error 中有具体原因。</p>
+<p>Client：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">244</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "method"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"mining.submit"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "params"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"username"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"bf0488aa"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"6a909d9bbc0f"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>任务 ID</strong>：<code>bf0488aa</code></p>
+<p><strong>minernonce</strong>：<code>6a909d9bbc0f</code>。注意 minernonce 是 6 个字节，因为提供的 extranonce 是 2 个字节。如果矿池提供 3 字节的 extranonce，那么 minernonce 必须是 5 字节</p>
+<p>Server：</p>
+<ul>
+<li>接受结果：</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">244</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "result"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "error"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">null</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<ul>
+<li>不被接受：</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#79B8FF">    "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">244</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "result"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "error"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">      -1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "Job not found"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">      NULL</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span></code></pre>
+<h2 id="三一般通讯过程">三、一般通讯过程</h2>
+<p>一般的矿机与矿池通讯过程就如下所示：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#F97583">sequenceDiagram</span></span>
+<span class="line"><span style="color:#FFAB70">矿机</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿池</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> mining.subscribe</span></span>
+<span class="line"><span style="color:#F97583">Note</span><span style="color:#B392F0"> left of</span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 矿机任务订阅</span></span>
+<span class="line"><span style="color:#FFAB70">矿池</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> mining.notify</span></span>
+<span class="line"><span style="color:#F97583">Note</span><span style="color:#B392F0"> right of</span><span style="color:#FFAB70"> 矿池</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 回复当前EthereumStratum/Version和extranonce</span></span>
+<span class="line"><span style="color:#FFAB70">矿机</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿池</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> mining.authorize</span></span>
+<span class="line"><span style="color:#F97583">Note</span><span style="color:#B392F0"> left of</span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 矿机认证</span></span>
+<span class="line"><span style="color:#FFAB70">矿池</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 返回认证结果</span></span>
+<span class="line"><span style="color:#FFAB70">矿池</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> mining.set_difficulty</span></span>
+<span class="line"><span style="color:#F97583">Note</span><span style="color:#B392F0"> right of</span><span style="color:#FFAB70"> 矿池</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 矿池更新难度</span></span>
+<span class="line"><span style="color:#FFAB70">矿池</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> mining.set_extranonce</span></span>
+<span class="line"><span style="color:#F97583">Note</span><span style="color:#B392F0"> right of</span><span style="color:#FFAB70"> 矿池</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 矿池更新extranonce</span></span>
+<span class="line"><span style="color:#FFAB70">矿池</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> mining.notify</span></span>
+<span class="line"><span style="color:#F97583">Note</span><span style="color:#B392F0"> right of</span><span style="color:#FFAB70"> 矿池</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 通知矿工工作</span></span>
+<span class="line"><span style="color:#FFAB70">矿机</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿池</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> mining.submit</span></span>
+<span class="line"><span style="color:#F97583">Note</span><span style="color:#B392F0"> left of</span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 矿机提交任务对应的minernonce</span></span>
+<span class="line"><span style="color:#FFAB70">矿池</span><span style="color:#F97583">->></span><span style="color:#FFAB70"> 矿机</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 是否接收share</span></span></code></pre>
+<p><img src="/imgs/blogs/2237-d27579071cabc8c0.jpg" alt="矿机与矿池通讯过程"></p> </div> <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row"> <ul class="mr-5 rtl:mr-0 rtl:ml-5"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/EVM" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">EVM</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/基础知识" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">基础知识</a></li></ul> <div class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600"> <span class="align-super font-bold text-gray-400 dark:text-slate-400">Share:</span> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Twitter Share" data-aw-social-share="twitter" data-aw-url="https://dataagg.github.io/ethstratum" data-aw-text="以太坊stratum协议原理"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-x">   <use  xlink:href="#ai:tabler:brand-x"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Facebook Share" data-aw-social-share="facebook" data-aw-url="https://dataagg.github.io/ethstratum"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-facebook">  <symbol id="ai:tabler:brand-facebook"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z"/></symbol> <use  xlink:href="#ai:tabler:brand-facebook"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Linkedin Share" data-aw-social-share="linkedin" data-aw-url="https://dataagg.github.io/ethstratum" data-aw-text="以太坊stratum协议原理"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-linkedin">  <symbol id="ai:tabler:brand-linkedin"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm4 5v5m0-8v.01M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></g></symbol> <use  xlink:href="#ai:tabler:brand-linkedin"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Whatsapp Share" data-aw-social-share="whatsapp" data-aw-url="https://dataagg.github.io/ethstratum" data-aw-text="以太坊stratum协议原理"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-whatsapp">  <symbol id="ai:tabler:brand-whatsapp"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></g></symbol> <use  xlink:href="#ai:tabler:brand-whatsapp"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Email Share" data-aw-social-share="mail" data-aw-url="https://dataagg.github.io/ethstratum" data-aw-text="以太坊stratum协议原理"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol> <use  xlink:href="#ai:tabler:mail"></use> </svg> </button> </div> </div> </article> </section> <div class="mx-auto px-6 sm:px-6 max-w-3xl pt-8 md:pt-4 pb-12 md:pb-20"> <a class="btn btn-tertiary px-3 md:px-3" href="/blog"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" data-icon="tabler:chevron-left">  <symbol id="ai:tabler:chevron-left"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"/></symbol> <use  xlink:href="#ai:tabler:chevron-left"></use> </svg> Back to Blog
+</a> </div>  </main>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12"> <div class="col-span-12 lg:col-span-4"> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/">TokenAgg DAO</a> </div> <div class="text-sm text-muted"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="/terms">通用条款</a><a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="/privacy">隐私协议</a> </div> </div> <div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">项目</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/project/index.html?id=001"> TokenAgg DAO </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/project/index.html?id=012"> DApp Admin </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">解决方案</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution1"> 生鲜配送 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution2"> 诊所联盟 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution3"> 妙蛙云池 </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">公司</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/teams"> 关于我们 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/intro"> 公司价值 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/story"> 成功案例 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/privacy"> 隐私条款 </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">博客</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/category/项目推荐"> 项目推荐 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/category/基础知识"> 基础知识 </a> </li> </ul> </div> </div> <div class="md:flex md:items-center md:justify-between py-6 md:py-8"> <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="X" href="https://twitter.com/watano"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol> <use  xlink:href="#ai:tabler:brand-x"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">   <use  xlink:href="#ai:tabler:rss"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Github" href="https://github.com/dataagg"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol> <use  xlink:href="#ai:tabler:brand-github"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Mirror" href="https://mirror.xyz/0x94c0e8cf59e644fa76d4fa83164b9f2030d07f31">  <img src="/imgs/icon-mirror.png" class="w-5 h-5" alt="">  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://github.com/dataagg"> DataAgg</a> · All rights reserved.   </div> </div> </div> </footer>   <script>(function(){const defaultTheme = "dark";
+
+  if (window.basic_script) {
+    return;
+  }
+
+  window.basic_script = true;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+
+  const initTheme = function () {
+    if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+      applyTheme(defaultTheme.replace(':only', ''));
+    } else if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  };
+  initTheme();
+
+  function attachEvent(selector, event, fn) {
+    const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.addEventListener(event, (e) => fn(e, elem), false);
+      });
+    }
+  }
+
+  const onLoad = function () {
+    let lastKnownScrollPosition = window.scrollY;
+    let ticking = true;
+
+    attachEvent('#header nav', 'click', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
+      elem.classList.toggle('expanded');
+      document.body.classList.toggle('overflow-hidden');
+      document.getElementById('header')?.classList.toggle('h-screen');
+      document.getElementById('header')?.classList.toggle('expanded');
+      document.getElementById('header')?.classList.toggle('bg-page');
+      document.querySelector('#header nav')?.classList.toggle('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
+      if (defaultTheme.endsWith(':only')) {
+        return;
+      }
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
+      const network = elem.getAttribute('data-aw-social-share');
+      const url = encodeURIComponent(elem.getAttribute('data-aw-url'));
+      const text = encodeURIComponent(elem.getAttribute('data-aw-text'));
+
+      let href;
+      switch (network) {
+        case 'facebook':
+          href = `https://www.facebook.com/sharer.php?u=${url}`;
+          break;
+        case 'twitter':
+          href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+          break;
+        case 'linkedin':
+          href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+          break;
+        case 'whatsapp':
+          href = `https://wa.me/?text=${text}%20${url}`;
+          break;
+        case 'mail':
+          href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;
+          break;
+
+        default:
+          return;
+      }
+
+      const newlink = document.createElement('a');
+      newlink.target = '_blank';
+      newlink.href = href;
+      newlink.click();
+    });
+
+    function appyHeaderStylesOnScroll() {
+      const header = document.querySelector('#header[data-aw-sticky-header]');
+      if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
+        document.getElementById('header').classList.add('scroll');
+      } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+        document.getElementById('header').classList.remove('scroll');
+      }
+      ticking = false;
+    }
+    appyHeaderStylesOnScroll();
+
+    attachEvent([document], 'scroll', function () {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          appyHeaderStylesOnScroll();
+        });
+        ticking = true;
+      }
+    });
+  };
+  const onPageShow = function () {
+    document.documentElement.classList.add('motion-safe:scroll-smooth');
+    const elem = document.querySelector('[data-aw-toggle-menu]');
+    if (elem) {
+      elem.classList.remove('expanded');
+    }
+    document.body.classList.remove('overflow-hidden');
+    document.getElementById('header')?.classList.remove('h-screen');
+    document.getElementById('header')?.classList.remove('expanded');
+    document.querySelector('#header nav')?.classList.add('hidden');
+  };
+
+  window.onload = onLoad;
+  window.onpageshow = onPageShow;
+
+  document.addEventListener('astro:after-swap', () => {
+    initTheme();
+    onLoad();
+    onPageShow();
+  });
+})();</script>  </body> </html>

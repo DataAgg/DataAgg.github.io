@@ -1,0 +1,326 @@
+{
+   "title": "雅说国学App开发建设",
+   "unit": "元",
+   "vault": 80,
+   "symbol1": "元",
+   "symbol2": "万元",
+   "manTypes": {
+      "teamLeader": 800,
+      "webDeveloper": 600,
+      "serverDeveloper": 550,
+      "tester": 350,
+      "maintenanceEngineer": 300
+   },
+   "sectionsBudgets": [
+      40000
+   ],
+   "sections": [
+      {
+         "title": "雅说国学App开发建设",
+         "category": "开发部署",
+         "start": "2023-02-09T00:00:00.000Z",
+         "end": "2023-03-11T00:00:00.000Z",
+         "description": "系统功能的需求分析、详细功能设计、功能开发测试、历史数据迁移及正式版本上线",
+         "excludes": "",
+         "tasks": [
+            {
+               "id": "t101",
+               "task": "需求分析讨论, 2023-02-09, 2d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     2
+                  ]
+               },
+               "status": "finished",
+               "category": "需求分析",
+               "description": "组织核心团队进行头脑风暴，收集整理核心业务需求"
+            },
+            {
+               "id": "t102",
+               "task": "功能详细设计, after t101, 5d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     5
+                  ],
+                  "webDeveloper": [
+                     1,
+                     2
+                  ],
+                  "serverDeveloper": [
+                     1,
+                     2
+                  ]
+               },
+               "status": "finished",
+               "category": "详细设计",
+               "description": "根据需求分析结果,设计系统功能模块, 业务流程及业务对象关系"
+            },
+            {
+               "id": "t103",
+               "task": "制定开发计划, after t102, 1d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     1
+                  ],
+                  "webDeveloper": [
+                     1,
+                     1
+                  ],
+                  "serverDeveloper": [
+                     1,
+                     1
+                  ]
+               },
+               "status": "finished",
+               "category": "详细设计",
+               "description": "针对需求设计及现有资源，与项目组成员沟通协调，详细设计安排开发计划"
+            },
+            {
+               "id": "t104",
+               "task": "内部演示环境搭建, after t103, 1d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     1
+                  ],
+                  "maintenanceEngineer": [
+                     1,
+                     1
+                  ]
+               },
+               "status": "finished",
+               "category": "系统部署",
+               "description": "购买云服务器，部署开发测试环境，申请认证测试环境所必须的企业认证"
+            },
+            {
+               "id": "t105",
+               "task": "详细设计说明, after t104, 5d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     2
+                  ],
+                  "webDeveloper": [
+                     1,
+                     1
+                  ],
+                  "serverDeveloper": [
+                     1,
+                     1
+                  ],
+                  "tester": [
+                     1,
+                     3
+                  ]
+               },
+               "status": "finished",
+               "category": "详细设计",
+               "description": "对所有设计、开发、测试人员讲解功能模块详细设计"
+            },
+            {
+               "id": "t106",
+               "task": "服务端设计实现, after t105, 5d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     1
+                  ],
+                  "serverDeveloper": [
+                     1,
+                     5
+                  ]
+               },
+               "status": "finished",
+               "category": "系统开发",
+               "description": "构建相关数据库表结构，初步实现服务端API"
+            },
+            {
+               "id": "t107",
+               "task": "实现后台管理界面功能, after t106, 5d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     1
+                  ],
+                  "webDeveloper": [
+                     1,
+                     5
+                  ]
+               },
+               "status": "working",
+               "category": "系统开发",
+               "description": "对现有系统的java端进行升级改造,实现基础版本升级"
+            },
+            {
+               "id": "t108",
+               "task": "uni-app客户端开发, after t106, 10d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     5
+                  ],
+                  "webDeveloper": [
+                     1,
+                     10
+                  ]
+               },
+               "category": "系统开发",
+               "description": "使用uni-app搭建客户端，实现基本功能"
+            },
+            {
+               "id": "t109",
+               "task": "前后端整合开发, after t107, 5d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     1
+                  ],
+                  "webDeveloper": [
+                     1,
+                     2
+                  ],
+                  "serverDeveloper": [
+                     1,
+                     2
+                  ]
+               },
+               "category": "系统开发",
+               "description": "系统前后端集成开发,联调相关功能模块"
+            },
+            {
+               "id": "t120",
+               "task": "bug修复与功能完善1, after t107, 6d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     3
+                  ],
+                  "webDeveloper": [
+                     1,
+                     3
+                  ],
+                  "serverDeveloper": [
+                     1,
+                     3
+                  ]
+               },
+               "category": "系统开发",
+               "description": "bug修复及功能细节完善"
+            },
+            {
+               "id": "t201",
+               "task": "内部培训, after t109, 1d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     1
+                  ],
+                  "tester": [
+                     1,
+                     1
+                  ]
+               },
+               "category": "系统实施",
+               "description": "对甲方相关人员进行内部功能培训，收集整理甲方反馈的改进意见"
+            },
+            {
+               "id": "t203",
+               "task": "系统正式上线, 2023-03-11, 1d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     1
+                  ],
+                  "webDeveloper": [
+                     1,
+                     1
+                  ],
+                  "serverDeveloper": [
+                     1,
+                     1
+                  ],
+                  "tester": [
+                     1,
+                     1
+                  ],
+                  "maintenanceEngineer": [
+                     1,
+                     1
+                  ]
+               },
+               "category": "系统上线",
+               "description": "系统正式上线发布运行"
+            },
+            {
+               "id": "t204",
+               "task": "系统运维及bug修复, after t203, 90d",
+               "costs": {
+                  "teamLeader": [
+                     1,
+                     1
+                  ],
+                  "webDeveloper": [
+                     1,
+                     5
+                  ],
+                  "serverDeveloper": [
+                     1,
+                     5
+                  ],
+                  "tester": [
+                     1,
+                     10
+                  ]
+               },
+               "status": "pending",
+               "category": "系统运维",
+               "description": "完善系统功能细节,修复bug"
+            }
+         ]
+      }
+   ],
+   "feeCategories": {
+      "外部采购": [
+         {
+            "title": "注册认证",
+            "specification": "域名、SSL证书及其他平台认证",
+            "quantity": 1,
+            "price": 500,
+            "description": "1年"
+         },
+         {
+            "title": "云服务器租赁",
+            "specification": "云服务器租赁, 1台服务器",
+            "quantity": 1,
+            "price": 2000,
+            "description": "1年"
+         },
+         {
+            "title": "第三方服务租用",
+            "specification": "相关第三方服务(CDN、邮件服务、短信网关、机器人识别等)的租用",
+            "quantity": 1,
+            "price": 500,
+            "description": "1年"
+         }
+      ],
+      "系统服务": [
+         {
+            "title": "系统运维",
+            "specification": "定期对系统进行常规运维工作，保证系统正常运作",
+            "quantity": 1,
+            "price": 5000,
+            "description": "1人1年"
+         },
+         {
+            "title": "技术支持",
+            "specification": "系统技术支持, 24小时*7天",
+            "quantity": 1,
+            "price": 2000,
+            "description": "1人1年"
+         }
+      ]
+   }
+}

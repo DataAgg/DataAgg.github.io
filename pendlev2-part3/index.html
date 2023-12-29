@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en" dir="ltr" class="2xl:text-[20px]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="sitemap" href="/sitemap-index.xml"><link rel="shortcut icon" href="/_astro/favicon.sNBBSGPZ.ico"><link rel="icon" type="image/svg+xml" href="/_astro/favicon.jAUM_1GV.svg"><link rel="mask-icon" href="/_astro/favicon.jAUM_1GV.svg" color="#8D46E7"><link rel="apple-touch-icon" sizes="180x180" href="/_astro/apple-touch-icon.qzCMJsat.png"><style is:global>
+  :root {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+    --aw-color-primary: #6966ff;
+    --aw-color-secondary: #3ed9a4;
+    --aw-color-accent: #e45555;
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: #181818;
+    --aw-color-text-muted: rgb(0x18 0x18 0x18 / 66%);
+    --aw-color-bg-page: #ffffff;
+    --aw-color-bg-page-dark: #ffffff;
+    --aw-color-layer1: #ffffff;
+    --aw-color-layer2: #e9ecee;
+    --aw-color-layer3: #ffffff;
+    --aw-color-layer4: #f7f8fa;
+    --aw-color-layer5: #ffffff;
+    --aw-color-layer6: #edf0f2;
+    --aw-color-layer7: #d5dadf;
+    --aw-color-layer8: #ffffff;
+
+    ::selection {
+      background-color: lavender;
+    }
+  }
+
+  .dark {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+    --aw-color-primary: #6966ff;
+    --aw-color-secondary: #3ed9a4;
+    --aw-color-accent: #e45555;
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: #fafafa;
+    --aw-color-text-muted: rgb(0xfa 0xfa 0xfa / 66%);
+    --aw-color-bg-page: #000000;
+    --aw-color-bg-page-dark: #000000;
+    --aw-color-layer1: #000000;
+    --aw-color-layer2: #18181b;
+    --aw-color-layer3: #0c0c0d;
+    --aw-color-layer4: #212124;
+    --aw-color-layer5: #303033;
+    --aw-color-layer6: #3b3b3f;
+    --aw-color-layer7: #494950;
+    --aw-color-layer8: #56565c;
+
+    ::selection {
+      background-color: #181825;
+      color: snow;
+    }
+  }
+</style><script>(function(){const defaultTheme = "dark";
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');
+
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.checked = theme !== 'dark';
+      });
+    }
+  }
+
+  if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+    applyTheme(defaultTheme.replace(':only', ''));
+  } else if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+})();</script><title>Pendle V2 - part3 — TokenAgg DAO</title>
+<meta name="description" content="Pendle V2 (Part 3/3) — 已更新的代币经济学" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://dataagg.github.io/pendlev2-part3" />
+<meta property="og:title" content="Pendle V2 - part3" />
+<meta property="og:description" content="Pendle V2 (Part 3/3) — 已更新的代币经济学" />
+<meta property="og:url" content="https://dataagg.github.io/pendlev2-part3" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://dataagg.github.io/imgs/blogs/pendlev2_21cr.png" />
+
+<meta property="og:locale" content="en" />
+<meta property="og:site_name" content="TokenAgg DAO" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@watano" />
+<meta name="twitter:creator" content="@watano" /><!-- Uncomment line below to activate View Transitions --><!-- <ViewTransitions fallback="swap" /> --><link rel="stylesheet" href="/_astro/click-through.45fq7QCF.css" /></head> <body class="antialiased text-default bg-page tracking-tight">   <header class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-aw-sticky-header id="header"> <div class="absolute inset-0"></div> <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl"> <div class="flex justify-between"> <a class="flex items-center" href="/"> <img src="/_astro/logo-long-dark.TphFalWY_Z1Yevjd.svg" id="toplogo" alt="TokenAgg DAO" width="199" height="64" loading="lazy" decoding="async"><script>(function(){const defaultTheme = "dark";
+
+  if (document.documentElement.classList.contains('dark')) {
+    document.getElementById('toplogo').src = '/imgs/logo-long-dark.svg';
+  } else {
+    document.getElementById('toplogo').src = '/imgs/logo-long-light.svg';
+  }
+})();</script> </a> <div class="flex items-center md:hidden"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> </div> <nav class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 项目  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">  <symbol id="ai:tabler:chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></symbol> <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/project/index.html?id=001"> TokenAgg DAO </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/project/index.html?id=012"> DApp Admin </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 解决方案  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution1"> 生鲜配送 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution2"> 诊所联盟 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/solution3"> 妙蛙云池 </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 公司  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/teams"> 关于我们 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/intro"> 公司价值 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/story"> 成功案例 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/privacy"> 隐私条款 </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> 博客  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/项目推荐"> 项目推荐 </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/基础知识"> 基础知识 </a> </li> </ul>  </li> </ul> </nav> <div class="hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0"> <div class="items-center flex justify-between w-full md:w-auto"> <div class="flex"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 md:inline-block" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol> <use  xlink:href="#ai:tabler:sun"></use> </svg></button> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS Feed" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">  <symbol id="ai:tabler:rss"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></symbol> <use  xlink:href="#ai:tabler:rss"></use> </svg> </a> </div> <span class="ml-4 rtl:ml-0 rtl:mr-4"> <a class="btn-secondary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" target="_blank" rel="noopener noreferrer" href="https://github.com/dataagg">Github</a> </span> </div> </div> </div> </header>  <main>  <section class="py-8 sm:py-16 lg:py-20 mx-auto"> <article> <header class=""> <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"> <p> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">  <symbol id="ai:tabler:clock"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 7v5l3 3"/></g></symbol> <use  xlink:href="#ai:tabler:clock"></use> </svg> <time datetime="Fri Dec 02 2022 08:03:00 GMT+0800 (香港标准时间)" class="inline-block">Dec 2, 2022</time>  
+· <a class="capitalize hover:underline inline-block" href="/category/项目推荐"> 项目推荐 </a>   · 8 min read </p> </div> <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> Pendle V2 - part3 </h1> <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"> Pendle V2 (Part 3/3) — 已更新的代币经济学 </p> <img src="/imgs/blogs/pendlev2_21cr.png" width="900" height="506" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 506px; aspect-ratio: 1.7786561264822134; width: 100%;" class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700" alt="Pendle V2 (Part 3/3) — 已更新的代币经济学" loading="eager" decoding="async"> </header> <div class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"> <h1 id="pendle-v2-launch-part-33--已更新的代币经济学">Pendle V2 Launch (Part 3/3) — 已更新的代币经济学</h1>
+<p><img src="/imgs/blogs/pendlev2_21.png" alt="pendlev2_21"></p>
+<h1 id="前言-preface">前言 Preface</h1>
+<p><a href="https://medium.com/pendle/pendle-v2-part-1-3-foundation-6e1773a1d2f4">Part 1</a> shared the new design of the Pendle AMM，with significant structural improvements in capital efficiency，LP risk，and fee accrual。</p>
+<p><a href="https://medium.com/pendle/pendle-v2-part-1-3-foundation-6e1773a1d2f4">第 1 部分</a>分享了 Pendle AMM 的新设计，在资本效率、LP 风险和费用应计方面进行了重大的结构改进。</p>
+<p><a href="https://medium.com/pendle/pendle-v2-part-2-3-open-access-25c1783a0b4f">Part 2</a> highlighted the steps taken to ensure the protocol can scale into the future，solved with EIP-5115，improved tooling，and removing gatekeepers。</p>
+<p><a href="https://medium.com/pendle/pendle-v2-part-2-3-open-access-25c1783a0b4f">第 2 部分</a>重点介绍了为确保协议可以扩展到未来而采取的步骤，通过 EIP-5115、改进工具和删除网守来解决。</p>
+<p>With these in place，we can begin exploring how to align and incentivize fee creation。We lean heavily into Andre Cronje’s approach with ve(3,3) and recommend reading here：<a href="https://andrecronje.medium.com/ve-3-3-ouroboros-part-1-fee-distribution-5dcf131dc82e">https://andrecronje.medium.com/ve-3-3-ouroboros-part-1-fee-distribution-5dcf131dc82e</a></p>
+<p>有了这些，我们就可以开始探索如何调整和激励费用创造。我们非常倾向于 Andre Cronje 的 ve(3,3) 方法，并建议阅读这里：<a href="https://andrecronje.medium.com/ve-3-3-ouroboros-part-1-fee-distribution-5dcf131dc82e">https://andrecronje.medium.com/ve-3-3-ouroboros-part-1-fee-distribution-5dcf131dc82e</a></p>
+<p>The best bits of his writing will also be shamelessly forked into this piece。</p>
+<p>他写作中最好的部分也将无耻地分叉到这篇文章中。</p>
+<h1 id="vependle">vePENDLE</h1>
+<p>The goals behind ve(3,3) are clear：Align incentives to generate <strong>liquidity and fees</strong>。</p>
+<p>ve(3,3) 背后的目标很明确：调整激励措施以产生<strong>流动性和费用</strong>。</p>
+<p>Looking at Curve’s original design，you will receive 50% of all fees as a veCRV holder，regardless of where you vote for emissions to go，so you might vote your emissions onto a pool that generates 0 fees for the protocol，but you still reap the reward of fees generated by other more active pools。</p>
+<p>查看 Curve 的原始设计，无论您投票支持流向何处，您都将作为 veCRV 持有者获得所有费用的 50%，因此您可以将您的投票到为协议产生 0 费用的池中，但您仍然获得其他更活跃的池产生的费用的奖励。</p>
+<p>The solution：vePENDLE lockers to receive swap fees only for pools they voted for。</p>
+<p>解决方案：vePENDLE 锁仓者只为他们投票的池收取交易手续费。</p>
+<p>This aligns where vePENDLE lockers vote，and ideally have them vote for the pools that generate the highest fees。</p>
+<p>这与 vePENDLE 锁仓者的投票位置保持一致，理想情况下，让他们投票支持产生最高费用的池。</p>
+<p>The benefits：</p>
+<p>优点：</p>
+<p><img src="/imgs/blogs/pendlev2_22.png" alt="pendlev2_22"></p>
+<ul>
+<li>它激励了协议的费用 (因此为 ve(3,3) 锁仓者支付更高的费用)</li>
+<li>排放将促进最高收费池，这将增加这些池的流动性，以允许更好的利率</li>
+<li>它将排放量与协议激励相结合，允许参与者自我优化系统。</li>
+</ul>
+<p>Source：<a href="https://andrecronje.medium.com/ve-3-3-ouroboros-part-1-fee-distribution-5dcf131dc82e">https://andrecronje.medium.com/ve-3-3-ouroboros-part-1-fee-distribution-5dcf131dc82e</a></p>
+<p>As Pendle is an AMM，and fees are generated by trading，profit-oriented lockers will vote emissions on pools with the highest trade volume，this will incentivize more liquidity for that pool，which improves trade quotes，which increases trade volume，and thus earns more fees。</p>
+<p>由于 Pendle 是 AMM，费用是由交易产生的，以利润为导向的锁仓者将对交易量最高的矿池进行投票，这将激励该池的更多流动性，从而改善交易报价，从而增加交易量，从而赚取更多费用。</p>
+<p>So，the Pendulum swings。</p>
+<p>所以，钟摆摆动。</p>
+<h1 id="网络所有权和信令-network-ownership-and-signalling">网络所有权和信令 Network Ownership and Signalling</h1>
+<p>Fees are distributed in stables，uncorrelated to PENDLE。This means that by owning a % of the supply，you are taking a bet on the future fee growth of the protocol。</p>
+<p>费用分布在马厩中，与 Pendle 无关。这意味着通过拥有一定比例的供应量，您正在押注协议的未来费用增长。</p>
+<p>There’s a trove of sidelined capital sitting amongst existing LPs on protocols such as Convex，with the potential for them to leverage composability and stack yield on Pendle。Beyond additional smart contract risk，such market participants have incentives to LP on Pendle — IL is negligible and they get additional sources of yield。</p>
+<p>有大量边缘资本在 Convex 等协议的现有 LP 中，他们有可能利用 Pendle 的可组合性和叠加收益。除了额外的智能合约风险之外，这些市场参与者还有动力在 Pendle 上进行 LP — IL 可以忽略不计，他们获得了额外的收益来源。</p>
+<p>Finally，<strong>Signalling</strong>。</p>
+<p>最后，<strong>信令。</strong></p>
+<p>Different variations have been tried for locking but we believe the original method grants maximum flexibility for both low and high+immediate signaling。</p>
+<p>已经尝试了不同的锁定变体，但我们相信原始方法为高低信号+即时信号提供了最大的灵活性。</p>
+<p>The minimum time frame for locking vePENDLE is 1 week and the maximum is 2 years。</p>
+<p>锁定 vePENDLE 的最短时间为 1 周，最长为2年。</p>
+<p>This allows signalling and fee claims to occur at a minimal time and $ cost，while if there is competition for an attractive pool，longer locks can still have an instant multiplier effect。</p>
+<p>这允许以最小的时间和成本进行信号和费用索赔，而如果存在对有吸引力的池的竞争，更长的锁仍然可以产生即时乘数效应。</p>
+<h1 id="vependle-摘要-vependle-summary">vePENDLE 摘要 vePENDLE Summary：</h1>
+<ol>
+<li>vePENDLE 授予锁仓者熟悉的奖励提升和激励机制的好处，而交易手续费只能从他们投票的池中获得。vePENDLE grants lockers familiar benefits of Reward Boosting and Incentive Channelling，while Swap Fees will only be received from pools they voted for。</li>
+<li>锁定持续时间从 1 周到2年不等，这使锁仓者可以灵活地进行优化。The lock duration ranges from 1 week to 2 years，which gives the locker flexibility on what to optimize for。</li>
+<li>随着协议的成熟，排放和激励措施的一致性将导致参与者的自我优化。As the protocol matures，the alignment of emissions and incentives will result in self-optimization by participants</li>
+</ol>
+<p>*<em>check out our</em> <a href="https://docs.pendle.finance/"><em>docs</em></a> <em>for more details</em></p>
+<p>*<em>查看我们的</em><a href="https://docs.pendle.finance/"><em>文档</em></a><em>了解更多详情</em></p>
+<h1 id="启动-launch">启动 Launch</h1>
+<p>With that，it’s time！</p>
+<p>有了这个，是时候了！</p>
+<p>Token locking and pools are now <strong>live</strong> at <a href="https://app.pendle.finance/">https://app.pendle.finance/</a>!</p>
+<p>令牌锁定和池现已 <strong><a href="https://app.pendle.finance/">https://app.pendle.finance/</a> 上线</strong>！</p>
+<p>We are proud to have support from the following protocols：</p>
+<p>我们很自豪能得到以下协议的支持：</p>
+<p><img src="/imgs/blogs/pendlev2_23.png" alt="pendlev2_23"></p>
+<p><em>Pick up stETH，FRAX-USDC，and LOOKS at a discount now！</em></p>
+<p><em>现在就折扣领取 stETH，FRAX-USDC，和 LOOKS！</em></p>
+<p>Or provide liquidity for extra yield！</p>
+<p>或提供流动性以获得额外收益！</p>
+<p>Use any major asset to enter and exit thanks to integration with <a href="https://docs.kyberswap.com/Aggregator/aggregator-api">KyberSwap Aggregator API</a>，starting with ETH，WBTC，USDC，USDT，and DAI。</p>
+<p>由于与 <a href="https://docs.kyberswap.com/Aggregator/aggregator-api">KyberSwap Aggregator API</a> 的集成，使用任何主要资产进入和退出，从 ETH、WBTC、USDC、USDT 和 DAI 开始。</p>
+<p><img src="/imgs/blogs/pendlev2_24.png" alt="pendlev2_24"></p>
+<p>V1 pools will continue functioning as per normal，while rewards will be sunset and directed to V2 pools。</p>
+<p>V1 池将继续正常运行，而奖励将日落并定向到 V2 池。</p>
+<p>Single-sided staking will continue for another 2 months as the vePENDLE system is rolled out。</p>
+<p>随着 vePENDLE 系统的推出，单面质押将再持续 2 个月。</p>
+<p>With the final piece of vePendle in place，Pendle V2 is finally ready！</p>
+<p>随着最后一块 vePendle 就位，Pendle V2 终于准备好了！</p>
+<p>We look forward to working with other protocols to expand DeFi and drive the adoption of yield trading。</p>
+<p>我们期待与其他协议合作，以扩展 DeFi 并推动收益交易的采用。</p>
+<p><img src="/imgs/blogs/pendlev2_25.png" alt="pendlev2_25"></p>
+<p><a href="https://www.pendle.finance/">Website</a> | <a href="https://app.pendle.finance/market">App</a> | <a href="https://twitter.com/pendle_fi">Twitter</a> | <a href="https://pendle.finance/discord">Discord</a> |<a href="https://awesomenear.com/aurigami">aurigami</a><a href="http://t.me/pendlefinance">Telegram</a> | <a href="https://github.com/pendle-finance/pendle-core-v2/tree/main/audits">Audits</a> | <a href="https://github.com/pendle-finance/pendle-v2-resources/tree/main/whitepapers">Whitepapers</a> | <a href="https://docs.pendle.finance/Home">Docs</a></p>
+<p><a href="https://www.pendle.finance/">网站</a>|<a href="https://app.pendle.finance/market">应用</a>|<a href="https://twitter.com/pendle_fi">推特</a>|<a href="https://pendle.finance/discord">Discord</a>|<a href="http://t.me/pendlefinance">电报</a>|<a href="https://github.com/pendle-finance/pendle-core-v2/tree/main/audits">审计</a>|<a href="https://github.com/pendle-finance/pendle-v2-resources/tree/main/whitepapers">白皮书</a>|<a href="https://docs.pendle.finance/Home">文档</a></p> </div> <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row"> <ul class="mr-5 rtl:mr-0 rtl:ml-5"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/EVM" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">EVM</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/DeFi" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">DeFi</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium"><a href="/tag/项目" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">项目</a></li></ul> <div class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600"> <span class="align-super font-bold text-gray-400 dark:text-slate-400">Share:</span> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Twitter Share" data-aw-social-share="twitter" data-aw-url="https://dataagg.github.io/pendlev2-part3" data-aw-text="Pendle V2 - part3"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-x">   <use  xlink:href="#ai:tabler:brand-x"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Facebook Share" data-aw-social-share="facebook" data-aw-url="https://dataagg.github.io/pendlev2-part3"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-facebook">  <symbol id="ai:tabler:brand-facebook"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z"/></symbol> <use  xlink:href="#ai:tabler:brand-facebook"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Linkedin Share" data-aw-social-share="linkedin" data-aw-url="https://dataagg.github.io/pendlev2-part3" data-aw-text="Pendle V2 - part3"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-linkedin">  <symbol id="ai:tabler:brand-linkedin"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm4 5v5m0-8v.01M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></g></symbol> <use  xlink:href="#ai:tabler:brand-linkedin"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Whatsapp Share" data-aw-social-share="whatsapp" data-aw-url="https://dataagg.github.io/pendlev2-part3" data-aw-text="Pendle V2 - part3"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-whatsapp">  <symbol id="ai:tabler:brand-whatsapp"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></g></symbol> <use  xlink:href="#ai:tabler:brand-whatsapp"></use> </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Email Share" data-aw-social-share="mail" data-aw-url="https://dataagg.github.io/pendlev2-part3" data-aw-text="Pendle V2 - part3"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol> <use  xlink:href="#ai:tabler:mail"></use> </svg> </button> </div> </div> </article> </section> <div class="mx-auto px-6 sm:px-6 max-w-3xl pt-8 md:pt-4 pb-12 md:pb-20"> <a class="btn btn-tertiary px-3 md:px-3" href="/blog"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" data-icon="tabler:chevron-left">  <symbol id="ai:tabler:chevron-left"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"/></symbol> <use  xlink:href="#ai:tabler:chevron-left"></use> </svg> Back to Blog
+</a> </div>  </main>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12"> <div class="col-span-12 lg:col-span-4"> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/">TokenAgg DAO</a> </div> <div class="text-sm text-muted"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="/terms">通用条款</a><a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2" href="/privacy">隐私协议</a> </div> </div> <div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">项目</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/project/index.html?id=001"> TokenAgg DAO </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/project/index.html?id=012"> DApp Admin </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">解决方案</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution1"> 生鲜配送 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution2"> 诊所联盟 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/solution3"> 妙蛙云池 </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">公司</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/teams"> 关于我们 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/intro"> 公司价值 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/story"> 成功案例 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/privacy"> 隐私条款 </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">博客</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/category/项目推荐"> 项目推荐 </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/category/基础知识"> 基础知识 </a> </li> </ul> </div> </div> <div class="md:flex md:items-center md:justify-between py-6 md:py-8"> <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="X" href="https://twitter.com/watano"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol> <use  xlink:href="#ai:tabler:brand-x"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">   <use  xlink:href="#ai:tabler:rss"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Github" href="https://github.com/dataagg"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol> <use  xlink:href="#ai:tabler:brand-github"></use> </svg>   </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Mirror" href="https://mirror.xyz/0x94c0e8cf59e644fa76d4fa83164b9f2030d07f31">  <img src="/imgs/icon-mirror.png" class="w-5 h-5" alt="">  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://github.com/dataagg"> DataAgg</a> · All rights reserved.   </div> </div> </div> </footer>   <script>(function(){const defaultTheme = "dark";
+
+  if (window.basic_script) {
+    return;
+  }
+
+  window.basic_script = true;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+
+  const initTheme = function () {
+    if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+      applyTheme(defaultTheme.replace(':only', ''));
+    } else if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  };
+  initTheme();
+
+  function attachEvent(selector, event, fn) {
+    const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.addEventListener(event, (e) => fn(e, elem), false);
+      });
+    }
+  }
+
+  const onLoad = function () {
+    let lastKnownScrollPosition = window.scrollY;
+    let ticking = true;
+
+    attachEvent('#header nav', 'click', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
+      elem.classList.toggle('expanded');
+      document.body.classList.toggle('overflow-hidden');
+      document.getElementById('header')?.classList.toggle('h-screen');
+      document.getElementById('header')?.classList.toggle('expanded');
+      document.getElementById('header')?.classList.toggle('bg-page');
+      document.querySelector('#header nav')?.classList.toggle('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
+      if (defaultTheme.endsWith(':only')) {
+        return;
+      }
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
+      const network = elem.getAttribute('data-aw-social-share');
+      const url = encodeURIComponent(elem.getAttribute('data-aw-url'));
+      const text = encodeURIComponent(elem.getAttribute('data-aw-text'));
+
+      let href;
+      switch (network) {
+        case 'facebook':
+          href = `https://www.facebook.com/sharer.php?u=${url}`;
+          break;
+        case 'twitter':
+          href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+          break;
+        case 'linkedin':
+          href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+          break;
+        case 'whatsapp':
+          href = `https://wa.me/?text=${text}%20${url}`;
+          break;
+        case 'mail':
+          href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;
+          break;
+
+        default:
+          return;
+      }
+
+      const newlink = document.createElement('a');
+      newlink.target = '_blank';
+      newlink.href = href;
+      newlink.click();
+    });
+
+    function appyHeaderStylesOnScroll() {
+      const header = document.querySelector('#header[data-aw-sticky-header]');
+      if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
+        document.getElementById('header').classList.add('scroll');
+      } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+        document.getElementById('header').classList.remove('scroll');
+      }
+      ticking = false;
+    }
+    appyHeaderStylesOnScroll();
+
+    attachEvent([document], 'scroll', function () {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          appyHeaderStylesOnScroll();
+        });
+        ticking = true;
+      }
+    });
+  };
+  const onPageShow = function () {
+    document.documentElement.classList.add('motion-safe:scroll-smooth');
+    const elem = document.querySelector('[data-aw-toggle-menu]');
+    if (elem) {
+      elem.classList.remove('expanded');
+    }
+    document.body.classList.remove('overflow-hidden');
+    document.getElementById('header')?.classList.remove('h-screen');
+    document.getElementById('header')?.classList.remove('expanded');
+    document.querySelector('#header nav')?.classList.add('hidden');
+  };
+
+  window.onload = onLoad;
+  window.onpageshow = onPageShow;
+
+  document.addEventListener('astro:after-swap', () => {
+    initTheme();
+    onLoad();
+    onPageShow();
+  });
+})();</script>  </body> </html>
